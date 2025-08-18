@@ -1,7 +1,3 @@
-; Variables
-
-(identifier) @variable
-
 ; Methods
 
 (method_declaration
@@ -49,7 +45,6 @@
 [
   (boolean_type)
   (integral_type)
-  (floating_point_type)
   (floating_point_type)
   (void_type)
 ] @type.builtin
@@ -147,3 +142,129 @@
   "with"
   "yield"
 ] @keyword
+
+; Operators
+[
+  "="
+  "+="
+  "-="
+  "*="
+  "/="
+  "%="
+  "&="
+  "^="
+  "|="
+  "<<="
+  ">>="
+  ">>>="
+  "+"
+  "-"
+  "*"
+  "/"
+  "%"
+  "++"
+  "--"
+  "&&"
+  "||"
+  "&"
+  "|"
+  "^"
+  "~"
+  "<<"
+  ">>"
+  ">>>"
+  "=="
+  "!="
+  "<"
+  "<="
+  ">"
+  ">="
+  "!"
+  "?"
+  ":"
+] @operator
+
+; Punctuation
+[
+  ";"
+  ","
+  "."
+] @punctuation.delimiter
+
+[
+  "("
+  ")"
+  "["
+  "]"
+  "{"
+  "}"
+] @punctuation.bracket
+
+; Variables (specific contexts only)
+(formal_parameter
+  name: (identifier) @variable.parameter)
+
+(catch_formal_parameter
+  name: (identifier) @variable.parameter)
+
+(variable_declarator
+  name: (identifier) @variable)
+
+(field_declaration
+  declarator: (variable_declarator
+    name: (identifier) @property))
+
+(enhanced_for_statement
+  name: (identifier) @variable)
+
+; Field access
+(field_access
+  field: (identifier) @property)
+
+; Assignment
+(assignment_expression
+  left: (identifier) @variable)
+
+; Import and package
+(import_declaration
+  (scoped_identifier) @namespace)
+
+(import_declaration
+  (identifier) @namespace)
+
+(package_declaration
+  (scoped_identifier) @namespace)
+
+; Exception types
+(catch_type
+  (type_identifier) @type.builtin)
+
+; Generic parameters
+(type_parameter
+  (type_identifier) @type.parameter)
+
+; Lambda parameters
+(lambda_expression
+  parameters: (formal_parameters
+    (formal_parameter
+      name: (identifier) @variable.parameter)))
+
+; Enum constants
+(enum_body
+  (enum_constant
+    name: (identifier) @constant))
+
+; Constructor calls
+(object_creation_expression
+  type: (type_identifier) @constructor)
+
+(object_creation_expression
+  type: (generic_type
+    (type_identifier) @constructor))
+
+; Annotation names
+(annotation 
+  name: (scoped_identifier) @attribute)
+
+(marker_annotation 
+  name: (scoped_identifier) @attribute)

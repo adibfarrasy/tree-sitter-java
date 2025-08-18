@@ -92,7 +92,7 @@ module.exports = grammar({
   word: $ => $.identifier,
 
   rules: {
-    program: $ => repeat($._toplevel_statement),
+    source_file: $ => repeat($._toplevel_statement),
 
     _toplevel_statement: $ => choice(
       $.statement,

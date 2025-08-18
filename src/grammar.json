@@ -3,7 +3,7 @@
   "name": "java",
   "word": "identifier",
   "rules": {
-    "program": {
+    "source_file": {
       "type": "REPEAT",
       "content": {
         "type": "SYMBOL",
@@ -7866,5 +7866,6 @@
     "_simple_type",
     "_unannotated_type",
     "module_directive"
-  ]
+  ],
+  "reserved": {}
 }
