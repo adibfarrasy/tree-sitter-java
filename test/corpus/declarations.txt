@@ -1211,4 +1211,46 @@ public class A {
                       (identifier))
                     (type_identifier))))
               (argument_list
-                (null_literal)))))))))
+                (null_literal))))))))
+
+================================================================================
+class with extends and implements
+================================================================================
+
+public abstract class MyClass extends BaseClass implements FirstInterface, SecondInterface {
+  private int field;
+}
+
+public interface MyInterface extends ParentInterface {
+  void method();
+}
+
+--------------------------------------------------------------------------------
+
+(program
+  (class_declaration
+    (modifiers)
+    (identifier)
+    (superclass
+      (type_identifier))
+    (super_interfaces
+      (type_list
+        (type_identifier)
+        (type_identifier)))
+    (class_body
+      (field_declaration
+        (modifiers)
+        (integral_type)
+        (variable_declarator
+          (identifier)))))
+  (interface_declaration
+    (modifiers)
+    (identifier)
+    (extends_interfaces
+      (type_list
+        (type_identifier)))
+    (interface_body
+      (method_declaration
+        (void_type)
+        (identifier)
+        (formal_parameters)))))
