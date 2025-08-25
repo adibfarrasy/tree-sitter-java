@@ -6,7 +6,7 @@ x = 3;
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (expression_statement
     (assignment_expression
       (identifier)
@@ -38,7 +38,7 @@ a >>> b;
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (expression_statement
     (binary_expression
       (identifier)
@@ -128,7 +128,7 @@ d instanceof final D bar;
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (expression_statement
     (instanceof_expression
       (identifier)
@@ -168,7 +168,7 @@ if (x)
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (if_statement
     condition: (parenthesized_expression
       (identifier))
@@ -184,7 +184,7 @@ if ((x))
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (if_statement
     condition: (parenthesized_expression
       (parenthesized_expression
@@ -202,7 +202,7 @@ if (x) {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (if_statement
     condition: (parenthesized_expression
       (identifier))
@@ -219,7 +219,7 @@ if (x = 3)
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (if_statement
     condition: (parenthesized_expression
       (assignment_expression
@@ -242,7 +242,7 @@ if (x = 3) {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (if_statement
     condition: (parenthesized_expression
       (assignment_expression
@@ -271,7 +271,7 @@ if (a)
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (if_statement
     (parenthesized_expression
       (identifier))
@@ -295,7 +295,7 @@ max = (a > b) ? a : b;
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (expression_statement
     (assignment_expression
       left: (identifier)
@@ -321,7 +321,7 @@ for (j.init(i); j.check(); j.update()) {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (for_statement
     init: (local_variable_declaration
       type: (integral_type)
@@ -379,7 +379,7 @@ for (A b : c) {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (enhanced_for_statement
     (type_identifier)
     (identifier)
@@ -407,7 +407,7 @@ class WhileDemo {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (class_declaration
     name: (identifier)
     body: (class_body
@@ -458,7 +458,7 @@ try (FileInputStream input = new FileInputStream("file.txt")) {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (try_with_resources_statement
     resources: (resource_specification
       (resource
@@ -490,7 +490,7 @@ return fire(x);
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (return_statement
     (identifier))
   (return_statement
@@ -519,7 +519,7 @@ class Duck {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (class_declaration
     (modifiers
       (annotation
@@ -556,7 +556,7 @@ class Quack {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (class_declaration
     (modifiers
       (marker_annotation
@@ -584,7 +584,7 @@ class Quack {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (class_declaration
     (modifiers
       (annotation
@@ -609,7 +609,7 @@ String[] allMyStrings = new @Nullable String[5];
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (local_variable_declaration
     (array_type
       (type_identifier)
@@ -636,7 +636,7 @@ class LambdaTest {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (class_declaration
     (identifier)
     (class_body
@@ -682,7 +682,7 @@ public class SwitchDemo {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (class_declaration
     (modifiers)
     name: (identifier)
@@ -775,7 +775,7 @@ class Test {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (class_declaration
     name: (identifier)
     body: (class_body
@@ -851,7 +851,7 @@ class Test {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (class_declaration
     name: (identifier)
     body: (class_body
@@ -923,7 +923,7 @@ class Test {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (class_declaration
     name: (identifier)
     body: (class_body
@@ -989,7 +989,7 @@ class Test {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (class_declaration
     name: (identifier)
     body: (class_body
@@ -1046,7 +1046,7 @@ class Test {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (class_declaration
     name: (identifier)
     body: (class_body
@@ -1107,7 +1107,7 @@ class Test {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (class_declaration
     (identifier)
     (class_body
@@ -1164,7 +1164,7 @@ public class Patterns {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (class_declaration
     (modifiers)
     (identifier)
@@ -1281,7 +1281,7 @@ public class Switches {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (class_declaration
     (modifiers)
     (identifier)
@@ -1365,7 +1365,7 @@ class Box <T> {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (class_declaration
     (identifier)
     (type_parameters
@@ -1401,7 +1401,7 @@ class WildcardDemo {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (class_declaration
     (identifier)
     (class_body
@@ -1430,7 +1430,7 @@ class someClass <T> {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (class_declaration
     (identifier)
     (type_parameters
@@ -1495,7 +1495,7 @@ Box<Integer> integerBox = new Box<>();
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (local_variable_declaration
     (generic_type
       (type_identifier)
@@ -1521,7 +1521,7 @@ super::something;
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (expression_statement
     (assignment_expression
       (identifier)
@@ -1560,7 +1560,7 @@ $cibleVisée2 = 2;
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (expression_statement
     (assignment_expression
       (identifier)
@@ -1580,7 +1580,7 @@ java.util.List<java.lang.Integer> x = null;
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (local_variable_declaration
     (generic_type
       (scoped_type_identifier
@@ -1628,7 +1628,7 @@ binary expression
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (expression_statement
     (binary_expression
       (parenthesized_expression
@@ -1652,7 +1652,7 @@ compPass("""
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (expression_statement
     (template_expression
       (identifier)
@@ -1713,7 +1713,7 @@ switch (c) {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (switch_expression
     (parenthesized_expression
       (identifier))
@@ -1744,7 +1744,7 @@ switch (c) {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (switch_expression
     (parenthesized_expression
       (identifier))
@@ -1780,7 +1780,7 @@ switch (c) {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (switch_expression
     (parenthesized_expression
       (identifier))
@@ -1806,7 +1806,7 @@ switch (c) {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (switch_expression
     (parenthesized_expression
       (identifier))
@@ -1835,7 +1835,7 @@ switch (c) {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (switch_expression
     (parenthesized_expression
       (identifier))
@@ -1868,7 +1868,7 @@ try {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (local_variable_declaration
     (integral_type)
     (variable_declarator
@@ -1906,7 +1906,7 @@ for (int i = 0, _ = sideEffect(); i < 10; i++) { }
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (enhanced_for_statement
     (type_identifier)
     (underscore_pattern)
@@ -1939,7 +1939,7 @@ void foo(int... @Foo x) {
 
 ---
 
-(program
+(source_file
   (method_declaration
     (void_type)
     (identifier)

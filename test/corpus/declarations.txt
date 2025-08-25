@@ -10,7 +10,7 @@ class A {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (class_declaration
     name: (identifier)
     body: (class_body
@@ -35,7 +35,7 @@ Integer[][] inputArrays = new Integer[0x100][];
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (local_variable_declaration
     type: (array_type
       element: (type_identifier)
@@ -69,7 +69,7 @@ open module com.foo { }
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (module_declaration
     name: (scoped_identifier
       scope: (identifier)
@@ -95,7 +95,7 @@ module com.foo { }
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (module_declaration
     (annotation
       (identifier)
@@ -129,7 +129,7 @@ module with marker annotation
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (module_declaration
     (marker_annotation
       (identifier))
@@ -154,7 +154,7 @@ module com.foo {}
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (module_declaration
     (annotation
       (identifier)
@@ -174,7 +174,7 @@ package myVector;
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (package_declaration
     (identifier)))
 
@@ -188,7 +188,7 @@ module com.example.foo {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (module_declaration
     name: (scoped_identifier
       scope: (scoped_identifier
@@ -227,7 +227,7 @@ module com.example.foo {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (module_declaration
     (scoped_identifier
       (scoped_identifier
@@ -317,7 +317,7 @@ import java.util.Vector;
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (import_declaration
     (scoped_identifier
       (scoped_identifier
@@ -333,7 +333,7 @@ import java.util.*;
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (import_declaration
     (scoped_identifier
       (identifier)
@@ -348,7 +348,7 @@ import static java.util.Vector;
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (import_declaration
     (scoped_identifier
       (scoped_identifier
@@ -364,7 +364,7 @@ import static java.util.*;
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (import_declaration
     (scoped_identifier
       (identifier)
@@ -380,7 +380,7 @@ class Point {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (class_declaration
     (identifier)
     (class_body)))
@@ -400,7 +400,7 @@ abstract class ColoredPoint extends Point {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (class_declaration
     (modifiers)
     (identifier)
@@ -425,7 +425,7 @@ public class Dog implements ISpeak {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (class_declaration
     (modifiers)
     (identifier)
@@ -448,7 +448,7 @@ class Point {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (class_declaration
     (identifier)
     (class_body
@@ -475,7 +475,7 @@ interface Top {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (interface_declaration
     (identifier)
     (interface_body)))
@@ -491,7 +491,7 @@ interface Bottom extends Left, Right {}
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (interface_declaration
     (identifier)
     (extends_interfaces
@@ -514,7 +514,7 @@ interface with annotation type declaration
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (annotation_type_declaration
     (identifier)
     (annotation_type_body)))
@@ -532,7 +532,7 @@ class Beyonce {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (class_declaration
     (identifier)
     (class_body
@@ -573,7 +573,7 @@ class Point {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (class_declaration
     name: (identifier)
     body: (class_body
@@ -629,7 +629,7 @@ public class Inner1<T> {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (class_declaration
     (modifiers)
     (identifier)
@@ -676,7 +676,7 @@ public class A {
 
 ---
 
-(program
+(source_file
   (class_declaration
     (modifiers)
     (identifier)
@@ -713,7 +713,7 @@ class Beyonce {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (class_declaration
     (identifier)
     (class_body
@@ -750,7 +750,7 @@ class Point {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (class_declaration
     (identifier)
     (class_body
@@ -782,7 +782,7 @@ class JayZ {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (class_declaration
     (identifier)
     (class_body
@@ -807,7 +807,7 @@ enum HandSign {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (enum_declaration
     name: (identifier)
     body: (enum_body
@@ -830,7 +830,7 @@ public @interface Foo {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (annotation_type_declaration
     (modifiers)
     name: (identifier)
@@ -854,7 +854,7 @@ public record Foo(int bar) {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (record_declaration
     (modifiers)
     name: (identifier)
@@ -873,7 +873,7 @@ public record Foo<T>(T bar) {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (record_declaration
     (modifiers)
     name: (identifier)
@@ -900,7 +900,7 @@ public class Usecase {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (class_declaration
     (modifiers)
     name: (identifier)
@@ -936,7 +936,7 @@ interface I { record R(int a) {} }
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (interface_declaration
     (identifier)
     (interface_body
@@ -960,7 +960,7 @@ record Person(int age) {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (record_declaration
     (identifier)
     (formal_parameters
@@ -992,7 +992,7 @@ record R() implements I {}
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (record_declaration
     (identifier)
     (formal_parameters)
@@ -1014,7 +1014,7 @@ class A$B {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (class_declaration
     (identifier)
     (class_body
@@ -1045,7 +1045,7 @@ non-sealed interface C extends A {}
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (interface_declaration
     (modifiers)
     (identifier)
@@ -1087,7 +1087,7 @@ public class Keywords {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (annotation_type_declaration
     (modifiers)
     (identifier)
@@ -1134,7 +1134,7 @@ public class Anno {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (class_declaration
     (modifiers)
     (identifier)
@@ -1165,7 +1165,7 @@ void main() {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (method_declaration
     (void_type)
     (identifier)
@@ -1184,7 +1184,7 @@ public class A {
 
 ---
 
-(program
+(source_file
   (class_declaration
     (modifiers)
     (identifier)
@@ -1211,7 +1211,7 @@ public class A {
                       (identifier))
                     (type_identifier))))
               (argument_list
-                (null_literal))))))))
+                (null_literal)))))))))
 
 ================================================================================
 class with extends and implements
@@ -1227,7 +1227,7 @@ public interface MyInterface extends ParentInterface {
 
 --------------------------------------------------------------------------------
 
-(program
+(source_file
   (class_declaration
     (modifiers)
     (identifier)

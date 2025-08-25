@@ -8,7 +8,7 @@ decimal integer literals
 
 ---
 
-(program
+(source_file
   (expression_statement (decimal_integer_literal))
   (expression_statement (decimal_integer_literal))
   (expression_statement (decimal_integer_literal)))
@@ -24,7 +24,7 @@ hex integer literals
 
 ---
 
-(program
+(source_file
   (expression_statement (hex_integer_literal))
   (expression_statement (hex_integer_literal))
   (expression_statement (hex_integer_literal))
@@ -40,7 +40,7 @@ octal integer literals
 
 ---
 
-(program
+(source_file
   (expression_statement (octal_integer_literal))
   (expression_statement (octal_integer_literal))
   (expression_statement (octal_integer_literal)))
@@ -56,7 +56,7 @@ binary integer literal
 
 ---
 
-(program
+(source_file
   (expression_statement (binary_integer_literal))
   (expression_statement (binary_integer_literal))
   (expression_statement (binary_integer_literal))
@@ -83,7 +83,7 @@ floating point literals
 
 ---
 
-(program
+(source_file
   (expression_statement (decimal_floating_point_literal))
   (expression_statement (decimal_floating_point_literal))
   (expression_statement (decimal_floating_point_literal))
@@ -108,7 +108,7 @@ false;
 
 ---
 
-(program
+(source_file
   (expression_statement (true))
   (expression_statement (false)))
 
@@ -128,7 +128,7 @@ character literals
 
 ---
 
-(program
+(source_file
   (expression_statement (character_literal))
   (expression_statement (character_literal))
   (expression_statement (character_literal))
@@ -150,7 +150,7 @@ string literals
 
 ---
 
-(program
+(source_file
       (expression_statement
         (string_literal))
       (expression_statement
@@ -201,7 +201,7 @@ string="has a quote with an escaped end quote\"""";
 
 ---
 
-(program
+(source_file
       (expression_statement
         (string_literal
           (multiline_string_fragment)))
@@ -252,7 +252,7 @@ escape sequences
 
 ---
 
-(program
+(source_file
       (expression_statement
         (string_literal
           (escape_sequence)
@@ -276,7 +276,7 @@ null;
 
 ---
 
-(program
+(source_file
   (expression_statement (null_literal)))
 
 =========================================
@@ -294,7 +294,7 @@ char escapes
 
 ---
 
-(program
+(source_file
   (expression_statement (character_literal))
   (expression_statement (character_literal))
   (expression_statement (character_literal))
@@ -312,7 +312,7 @@ octal escapes
 
 ---
 
-(program
+(source_file
   (expression_statement (character_literal)))
 
 =========================================
@@ -323,7 +323,7 @@ unicode escapes
 
 ---
 
-(program
+(source_file
   (expression_statement (character_literal)))
 
 =================
@@ -365,7 +365,7 @@ ascii escapes
 
 ---
 
-(program
+(source_file
   (expression_statement (character_literal))
   (expression_statement (character_literal))
   (expression_statement (character_literal))
@@ -407,6 +407,6 @@ String.class;
 
 ---
 
-(program
+(source_file
   (expression_statement
     (class_literal (type_identifier))))

@@ -11,7 +11,7 @@ a /* dkjfhsdf + */ + b; /* ***** */
 
 ---
 
-(program 
+(source_file 
   (line_comment) 
   (block_comment) 
   (block_comment) 
@@ -32,6 +32,6 @@ comments and literals
 
 ---
 
-(program
+(source_file
   (expression_statement (decimal_integer_literal))
   (line_comment))

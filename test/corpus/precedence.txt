@@ -13,7 +13,7 @@ class A {
 }
 ---
 
-(program
+(source_file
   (class_declaration
     (identifier)
     (class_body
