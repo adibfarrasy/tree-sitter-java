@@ -1,0 +1,105 @@
+================================================================================
+simple field access
+================================================================================
+object.field;
+--------------------------------------------------------------------------------
+
+(source_file
+  (expression_statement
+    (field_access
+      object: (identifier)
+      field: (identifier))))
+
+================================================================================
+chained field access
+================================================================================
+object.field.subfield;
+--------------------------------------------------------------------------------
+
+(source_file
+  (expression_statement
+    (field_access
+      object: (field_access
+        object: (identifier)
+        field: (identifier))
+      field: (identifier))))
+
+================================================================================
+static field access
+================================================================================
+MyClass.CONSTANT;
+--------------------------------------------------------------------------------
+
+(source_file
+  (expression_statement
+    (field_access
+      object: (identifier)
+      field: (identifier))))
+
+================================================================================
+this field access
+================================================================================
+this.value;
+--------------------------------------------------------------------------------
+
+(source_file
+  (expression_statement
+    (field_access
+      object: (this)
+      field: (identifier))))
+
+================================================================================
+super field access
+================================================================================
+super.parentField;
+--------------------------------------------------------------------------------
+
+(source_file
+  (expression_statement
+    (field_access
+      object: (super)
+      field: (identifier))))
+
+================================================================================
+field access on method result
+================================================================================
+getObject().field;
+--------------------------------------------------------------------------------
+
+(source_file
+  (expression_statement
+    (field_access
+      object: (method_invocation
+        name: (identifier)
+        arguments: (argument_list))
+      field: (identifier))))
+
+================================================================================
+field access in assignment
+================================================================================
+object.field = value;
+--------------------------------------------------------------------------------
+
+(source_file
+  (expression_statement
+    (assignment_expression
+      left: (field_access
+        object: (identifier)
+        field: (identifier))
+      right: (identifier))))
+
+================================================================================
+field access with package qualification
+================================================================================
+com.example.Utils.CONSTANT;
+--------------------------------------------------------------------------------
+
+(source_file
+  (expression_statement
+    (field_access
+      object: (field_access
+        object: (field_access
+          object: (identifier)
+          field: (identifier))
+        field: (identifier))
+      field: (identifier))))

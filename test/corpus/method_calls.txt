@@ -1,0 +1,187 @@
+================================================================================
+simple method call
+================================================================================
+doSomething();
+--------------------------------------------------------------------------------
+
+(source_file
+  (expression_statement
+    (method_invocation
+      name: (identifier)
+      arguments: (argument_list))))
+
+================================================================================
+method call with arguments
+================================================================================
+calculate(10, 20);
+--------------------------------------------------------------------------------
+
+(source_file
+  (expression_statement
+    (method_invocation
+      name: (identifier)
+      arguments: (argument_list
+        (decimal_integer_literal)
+        (decimal_integer_literal)))))
+
+================================================================================
+chained method calls
+================================================================================
+object.method1().method2().method3();
+--------------------------------------------------------------------------------
+
+(source_file
+  (expression_statement
+    (method_invocation
+      object: (method_invocation
+        object: (method_invocation
+          object: (identifier)
+          name: (identifier)
+          arguments: (argument_list))
+        name: (identifier)
+        arguments: (argument_list))
+      name: (identifier)
+      arguments: (argument_list))))
+
+================================================================================
+static method call
+================================================================================
+Math.sqrt(16);
+--------------------------------------------------------------------------------
+
+(source_file
+  (expression_statement
+    (method_invocation
+      object: (identifier)
+      name: (identifier)
+      arguments: (argument_list
+        (decimal_integer_literal)))))
+
+================================================================================
+method call with this
+================================================================================
+this.helper();
+--------------------------------------------------------------------------------
+
+(source_file
+  (expression_statement
+    (method_invocation
+      object: (this)
+      name: (identifier)
+      arguments: (argument_list))))
+
+================================================================================
+method call with super
+================================================================================
+super.parentMethod(arg);
+--------------------------------------------------------------------------------
+
+(source_file
+  (expression_statement
+    (method_invocation
+      object: (super)
+      name: (identifier)
+      arguments: (argument_list
+        (identifier)))))
+
+================================================================================
+method call with string arguments
+================================================================================
+String.format("Hello %s", name);
+--------------------------------------------------------------------------------
+
+(source_file
+  (expression_statement
+    (method_invocation
+      object: (identifier)
+      name: (identifier)
+      arguments: (argument_list
+        (string_literal
+          (string_fragment))
+        (identifier)))))
+
+================================================================================
+method call with trailing comma
+================================================================================
+process(arg1, arg2);
+--------------------------------------------------------------------------------
+
+(source_file
+  (expression_statement
+    (method_invocation
+      name: (identifier)
+      arguments: (argument_list
+        (identifier)
+        (identifier)))))
+
+================================================================================
+method call on array access
+================================================================================
+array[0].toString();
+--------------------------------------------------------------------------------
+
+(source_file
+  (expression_statement
+    (method_invocation
+      object: (array_access
+        array: (identifier)
+        index: (decimal_integer_literal))
+      name: (identifier)
+      arguments: (argument_list))))
+
+================================================================================
+varargs method call
+================================================================================
+String.format("%s %s %s", "a", "b", "c");
+--------------------------------------------------------------------------------
+
+(source_file
+  (expression_statement
+    (method_invocation
+      object: (identifier)
+      name: (identifier)
+      arguments: (argument_list
+        (string_literal
+          (string_fragment))
+        (string_literal
+          (string_fragment))
+        (string_literal
+          (string_fragment))
+        (string_literal
+          (string_fragment))))))
+
+================================================================================
+generic method call
+================================================================================
+Collections.<String>emptyList();
+--------------------------------------------------------------------------------
+
+(source_file
+  (expression_statement
+    (method_invocation
+      object: (identifier)
+      type_arguments: (type_arguments
+        (type_identifier))
+      name: (identifier)
+      arguments: (argument_list))))
+
+================================================================================
+complex nested method call
+================================================================================
+getDatabase().getTable("users").findById(123);
+--------------------------------------------------------------------------------
+
+(source_file
+  (expression_statement
+    (method_invocation
+      object: (method_invocation
+        object: (method_invocation
+          name: (identifier)
+          arguments: (argument_list))
+        name: (identifier)
+        arguments: (argument_list
+          (string_literal
+          (string_fragment))))
+      name: (identifier)
+      arguments: (argument_list
+        (decimal_integer_literal)))))

@@ -1,0 +1,231 @@
+================================================================================
+basic for loop
+================================================================================
+class Test {
+    void method() {
+        for (int i = 0; i < 10; i++) {
+            System.out.println(i);
+        }
+    }
+}
+--------------------------------------------------------------------------------
+
+(source_file
+  (class_declaration
+    name: (identifier)
+    body: (class_body
+      (method_declaration
+        type: (void_type)
+        name: (identifier)
+        parameters: (formal_parameters)
+        body: (block
+          (for_statement
+            init: (local_variable_declaration
+              type: (integral_type)
+              declarator: (variable_declarator
+                name: (identifier)
+                value: (decimal_integer_literal)))
+            condition: (binary_expression
+              left: (identifier)
+              right: (decimal_integer_literal))
+            update: (update_expression
+              (identifier))
+            body: (block
+              (expression_statement
+                (method_invocation
+                  object: (field_access
+                    object: (identifier)
+                    field: (identifier))
+                  name: (identifier)
+                  arguments: (argument_list
+                    (identifier)))))))))))
+
+================================================================================
+enhanced for loop
+================================================================================
+class Test {
+    void method() {
+        for (String item : items) {
+            process(item);
+        }
+    }
+}
+--------------------------------------------------------------------------------
+
+(source_file
+  (class_declaration
+    name: (identifier)
+    body: (class_body
+      (method_declaration
+        type: (void_type)
+        name: (identifier)
+        parameters: (formal_parameters)
+        body: (block
+          (enhanced_for_statement
+            type: (type_identifier)
+            name: (identifier)
+            value: (identifier)
+            body: (block
+              (expression_statement
+                (method_invocation
+                  name: (identifier)
+                  arguments: (argument_list
+                    (identifier)))))))))))
+
+================================================================================
+for loop with multiple initialization
+================================================================================
+class Test {
+    void method() {
+        for (int i = 0, j = 10; i < j; i++, j--) {
+            work();
+        }
+    }
+}
+--------------------------------------------------------------------------------
+
+(source_file
+  (class_declaration
+    name: (identifier)
+    body: (class_body
+      (method_declaration
+        type: (void_type)
+        name: (identifier)
+        parameters: (formal_parameters)
+        body: (block
+          (for_statement
+            init: (local_variable_declaration
+              type: (integral_type)
+              declarator: (variable_declarator
+                name: (identifier)
+                value: (decimal_integer_literal))
+              declarator: (variable_declarator
+                name: (identifier)
+                value: (decimal_integer_literal)))
+            condition: (binary_expression
+              left: (identifier)
+              right: (identifier))
+            update: (update_expression
+              (identifier))
+            update: (update_expression
+              (identifier))
+            body: (block
+              (expression_statement
+                (method_invocation
+                  name: (identifier)
+                  arguments: (argument_list))))))))))
+
+================================================================================
+for loop with empty sections
+================================================================================
+class Test {
+    void method() {
+        for (;;) {
+            if (done) break;
+        }
+    }
+}
+--------------------------------------------------------------------------------
+
+(source_file
+  (class_declaration
+    name: (identifier)
+    body: (class_body
+      (method_declaration
+        type: (void_type)
+        name: (identifier)
+        parameters: (formal_parameters)
+        body: (block
+          (for_statement
+            body: (block
+              (if_statement
+                condition: (parenthesized_expression
+                  (identifier))
+                consequence: (break_statement)))))))))
+
+================================================================================
+for loop with expression initialization
+================================================================================
+class Test {
+    void method() {
+        int i;
+        for (i = 0; i < 10; i++) {
+            doWork();
+        }
+    }
+}
+--------------------------------------------------------------------------------
+
+(source_file
+  (class_declaration
+    name: (identifier)
+    body: (class_body
+      (method_declaration
+        type: (void_type)
+        name: (identifier)
+        parameters: (formal_parameters)
+        body: (block
+          (local_variable_declaration
+            type: (integral_type)
+            declarator: (variable_declarator
+              name: (identifier)))
+          (for_statement
+            init: (assignment_expression
+              left: (identifier)
+              right: (decimal_integer_literal))
+            condition: (binary_expression
+              left: (identifier)
+              right: (decimal_integer_literal))
+            update: (update_expression
+              (identifier))
+            body: (block
+              (expression_statement
+                (method_invocation
+                  name: (identifier)
+                  arguments: (argument_list))))))))))
+
+================================================================================
+enhanced for with array
+================================================================================
+class Test {
+    void method() {
+        int[] numbers = {1, 2, 3};
+        for (int num : numbers) {
+            System.out.println(num);
+        }
+    }
+}
+--------------------------------------------------------------------------------
+
+(source_file
+  (class_declaration
+    name: (identifier)
+    body: (class_body
+      (method_declaration
+        type: (void_type)
+        name: (identifier)
+        parameters: (formal_parameters)
+        body: (block
+          (local_variable_declaration
+            type: (array_type
+              element: (integral_type)
+              dimensions: (dimensions))
+            declarator: (variable_declarator
+              name: (identifier)
+              value: (array_initializer
+                (decimal_integer_literal)
+                (decimal_integer_literal)
+                (decimal_integer_literal))))
+          (enhanced_for_statement
+            type: (integral_type)
+            name: (identifier)
+            value: (identifier)
+            body: (block
+              (expression_statement
+                (method_invocation
+                  object: (field_access
+                    object: (identifier)
+                    field: (identifier))
+                  name: (identifier)
+                  arguments: (argument_list
+                    (identifier)))))))))))

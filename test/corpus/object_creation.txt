@@ -1,0 +1,227 @@
+================================================================================
+simple object creation
+================================================================================
+new String();
+--------------------------------------------------------------------------------
+
+(source_file
+  (expression_statement
+    (object_creation_expression
+      type: (type_identifier)
+      arguments: (argument_list))))
+
+================================================================================
+object creation with arguments
+================================================================================
+new StringBuilder("hello");
+--------------------------------------------------------------------------------
+
+(source_file
+  (expression_statement
+    (object_creation_expression
+      type: (type_identifier)
+      arguments: (argument_list
+        (string_literal
+          (string_fragment))))))
+
+================================================================================
+object creation with generic type
+================================================================================
+new ArrayList<String>();
+--------------------------------------------------------------------------------
+
+(source_file
+  (expression_statement
+    (object_creation_expression
+      type: (generic_type
+        (type_identifier)
+        (type_arguments
+          (type_identifier)))
+      arguments: (argument_list))))
+
+================================================================================
+object creation with diamond operator
+================================================================================
+List<String> list = new ArrayList<>();
+--------------------------------------------------------------------------------
+
+(source_file
+  (local_variable_declaration
+    type: (generic_type
+      (type_identifier)
+      (type_arguments
+        (type_identifier)))
+    declarator: (variable_declarator
+      name: (identifier)
+      value: (object_creation_expression
+        type: (generic_type
+          (type_identifier)
+          (type_arguments))
+        arguments: (argument_list)))))
+
+================================================================================
+object creation with anonymous class
+================================================================================
+new Runnable() {
+    @Override
+    public void run() {
+        System.out.println("running");
+    }
+};
+--------------------------------------------------------------------------------
+
+(source_file
+  (expression_statement
+    (object_creation_expression
+      type: (type_identifier)
+      arguments: (argument_list)
+      (class_body
+        (method_declaration
+          (modifiers
+            (marker_annotation
+              name: (identifier)))
+          type: (void_type)
+          name: (identifier)
+          parameters: (formal_parameters)
+          body: (block
+            (expression_statement
+              (method_invocation
+                object: (field_access
+                  object: (identifier)
+                  field: (identifier))
+                name: (identifier)
+                arguments: (argument_list
+                  (string_literal
+                    (string_fragment)))))))))))
+
+================================================================================
+array creation with size
+================================================================================
+new int[10];
+--------------------------------------------------------------------------------
+
+(source_file
+  (expression_statement
+    (array_creation_expression
+      (integral_type)
+      (dimensions_expr
+        (decimal_integer_literal)))))
+
+================================================================================
+multidimensional array creation
+================================================================================
+new int[5][10];
+--------------------------------------------------------------------------------
+
+(source_file
+  (expression_statement
+    (array_creation_expression
+      (integral_type)
+      (dimensions_expr
+        (decimal_integer_literal))
+      (dimensions_expr
+        (decimal_integer_literal)))))
+
+================================================================================
+array creation with initializer
+================================================================================
+new String[]{"hello", "world"};
+--------------------------------------------------------------------------------
+
+(source_file
+  (expression_statement
+    (array_creation_expression
+      (type_identifier)
+      (dimensions)
+      (array_initializer
+        (string_literal
+          (string_fragment))
+        (string_literal
+          (string_fragment))))))
+
+================================================================================
+object creation in method call
+================================================================================
+process(new Data(123, "test"));
+--------------------------------------------------------------------------------
+
+(source_file
+  (expression_statement
+    (method_invocation
+      name: (identifier)
+      arguments: (argument_list
+        (object_creation_expression
+          type: (type_identifier)
+          arguments: (argument_list
+            (decimal_integer_literal)
+            (string_literal
+          (string_fragment))))))))
+
+================================================================================
+chained method call on new object
+================================================================================
+new StringBuilder().append("hello").toString();
+--------------------------------------------------------------------------------
+
+(source_file
+  (expression_statement
+    (method_invocation
+      object: (method_invocation
+        object: (object_creation_expression
+          type: (type_identifier)
+          arguments: (argument_list))
+        name: (identifier)
+        arguments: (argument_list
+          (string_literal
+          (string_fragment))))
+      name: (identifier)
+      arguments: (argument_list))))
+
+================================================================================
+inner class object creation
+================================================================================
+outer.new InnerClass();
+--------------------------------------------------------------------------------
+
+(source_file
+  (expression_statement
+    (object_creation_expression
+      (identifier)
+      type: (type_identifier)
+      arguments: (argument_list))))
+
+================================================================================
+object creation with generic wildcard
+================================================================================
+new HashMap<String, ? extends Number>();
+--------------------------------------------------------------------------------
+
+(source_file
+  (expression_statement
+    (object_creation_expression
+      type: (generic_type
+        (type_identifier)
+        (type_arguments
+          (type_identifier)
+          (wildcard
+            (type_identifier))))
+      arguments: (argument_list))))
+
+================================================================================
+object creation with nested generics
+================================================================================
+new Map<String, List<Integer>>();
+--------------------------------------------------------------------------------
+
+(source_file
+  (expression_statement
+    (object_creation_expression
+      type: (generic_type
+        (type_identifier)
+        (type_arguments
+          (type_identifier)
+          (generic_type
+            (type_identifier)
+            (type_arguments
+              (type_identifier)))))
+      arguments: (argument_list))))

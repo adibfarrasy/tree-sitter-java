@@ -1,0 +1,343 @@
+================================================================================
+simple method declaration
+================================================================================
+class Test {
+    public void doSomething() {
+    }
+}
+--------------------------------------------------------------------------------
+
+(source_file
+  (class_declaration
+    name: (identifier)
+    body: (class_body
+      (method_declaration
+        (modifiers)
+        type: (void_type)
+        name: (identifier)
+        parameters: (formal_parameters)
+        body: (block)))))
+
+================================================================================
+method with return type and parameters
+================================================================================
+class Test {
+    public int calculate(int a, int b) {
+        return a + b;
+    }
+}
+--------------------------------------------------------------------------------
+
+(source_file
+  (class_declaration
+    name: (identifier)
+    body: (class_body
+      (method_declaration
+        (modifiers)
+        type: (integral_type)
+        name: (identifier)
+        parameters: (formal_parameters
+          (formal_parameter
+            type: (integral_type)
+            name: (identifier))
+          (formal_parameter
+            type: (integral_type)
+            name: (identifier)))
+        body: (block
+          (return_statement
+            (binary_expression
+              left: (identifier)
+              right: (identifier))))))))
+
+================================================================================
+static method declaration
+================================================================================
+class Test {
+    public static String format(String template, Object... args) {
+        return null;
+    }
+}
+--------------------------------------------------------------------------------
+
+(source_file
+  (class_declaration
+    name: (identifier)
+    body: (class_body
+      (method_declaration
+        (modifiers)
+        type: (type_identifier)
+        name: (identifier)
+        parameters: (formal_parameters
+          (formal_parameter
+            type: (type_identifier)
+            name: (identifier))
+          (spread_parameter
+            (type_identifier)
+            (variable_declarator
+              name: (identifier))))
+        body: (block
+          (return_statement
+            (null_literal)))))))
+
+================================================================================
+abstract method declaration
+================================================================================
+abstract class Test {
+    public abstract void process();
+}
+--------------------------------------------------------------------------------
+
+(source_file
+  (class_declaration
+    (modifiers)
+    name: (identifier)
+    body: (class_body
+      (method_declaration
+        (modifiers)
+        type: (void_type)
+        name: (identifier)
+        parameters: (formal_parameters)))))
+
+================================================================================
+method with generic type parameters
+================================================================================
+class Test {
+    public <T> List<T> convert(T[] array) {
+        return null;
+    }
+}
+--------------------------------------------------------------------------------
+
+(source_file
+  (class_declaration
+    name: (identifier)
+    body: (class_body
+      (method_declaration
+        (modifiers)
+        type_parameters: (type_parameters
+          (type_parameter
+            (type_identifier)))
+        type: (generic_type
+          (type_identifier)
+          (type_arguments
+            (type_identifier)))
+        name: (identifier)
+        parameters: (formal_parameters
+          (formal_parameter
+            type: (array_type
+              element: (type_identifier)
+              dimensions: (dimensions))
+            name: (identifier)))
+        body: (block
+          (return_statement
+            (null_literal)))))))
+
+================================================================================
+method with throws clause
+================================================================================
+class Test {
+    public void readFile(String path) throws IOException, FileNotFoundException {
+    }
+}
+--------------------------------------------------------------------------------
+
+(source_file
+  (class_declaration
+    name: (identifier)
+    body: (class_body
+      (method_declaration
+        (modifiers)
+        type: (void_type)
+        name: (identifier)
+        parameters: (formal_parameters
+          (formal_parameter
+            type: (type_identifier)
+            name: (identifier)))
+        (throws
+          (type_identifier)
+          (type_identifier))
+        body: (block)))))
+
+================================================================================
+method with annotations
+================================================================================
+class Test {
+    @Override
+    @SuppressWarnings("unchecked")
+    public String toString() {
+        return "test";
+    }
+}
+--------------------------------------------------------------------------------
+
+(source_file
+  (class_declaration
+    name: (identifier)
+    body: (class_body
+      (method_declaration
+        (modifiers
+          (marker_annotation
+            name: (identifier))
+          (annotation
+            name: (identifier)
+            arguments: (annotation_argument_list
+              (string_literal
+                (string_fragment)))))
+        type: (type_identifier)
+        name: (identifier)
+        parameters: (formal_parameters)
+        body: (block
+          (return_statement
+            (string_literal
+              (string_fragment))))))))
+
+================================================================================
+method with final parameters
+================================================================================
+class Test {
+    public void process(final String data, final int count) {
+    }
+}
+--------------------------------------------------------------------------------
+
+(source_file
+  (class_declaration
+    name: (identifier)
+    body: (class_body
+      (method_declaration
+        (modifiers)
+        type: (void_type)
+        name: (identifier)
+        parameters: (formal_parameters
+          (formal_parameter
+            (modifiers)
+            type: (type_identifier)
+            name: (identifier))
+          (formal_parameter
+            (modifiers)
+            type: (integral_type)
+            name: (identifier)))
+        body: (block)))))
+
+================================================================================
+synchronized method
+================================================================================
+class Test {
+    public synchronized void criticalSection() {
+    }
+}
+--------------------------------------------------------------------------------
+
+(source_file
+  (class_declaration
+    name: (identifier)
+    body: (class_body
+      (method_declaration
+        (modifiers)
+        type: (void_type)
+        name: (identifier)
+        parameters: (formal_parameters)
+        body: (block)))))
+
+================================================================================
+default method in interface
+================================================================================
+interface Test {
+    default void defaultMethod() {
+        System.out.println("default");
+    }
+}
+--------------------------------------------------------------------------------
+
+(source_file
+  (interface_declaration
+    name: (identifier)
+    body: (interface_body
+      (method_declaration
+        (modifiers)
+        type: (void_type)
+        name: (identifier)
+        parameters: (formal_parameters)
+        body: (block
+          (expression_statement
+            (method_invocation
+              object: (field_access
+                object: (identifier)
+                field: (identifier))
+              name: (identifier)
+              arguments: (argument_list
+                (string_literal
+                  (string_fragment))))))))))
+
+================================================================================
+method with bounded type parameters
+================================================================================
+class Test {
+    public <T extends Comparable<T>> T max(T a, T b) {
+        return a.compareTo(b) > 0 ? a : b;
+    }
+}
+--------------------------------------------------------------------------------
+
+(source_file
+  (class_declaration
+    name: (identifier)
+    body: (class_body
+      (method_declaration
+        (modifiers)
+        type_parameters: (type_parameters
+          (type_parameter
+            (type_identifier)
+            (type_bound
+              (generic_type
+                (type_identifier)
+                (type_arguments
+                  (type_identifier))))))
+        type: (type_identifier)
+        name: (identifier)
+        parameters: (formal_parameters
+          (formal_parameter
+            type: (type_identifier)
+            name: (identifier))
+          (formal_parameter
+            type: (type_identifier)
+            name: (identifier)))
+        body: (block
+          (return_statement
+            (ternary_expression
+              condition: (binary_expression
+                left: (method_invocation
+                  object: (identifier)
+                  name: (identifier)
+                  arguments: (argument_list
+                    (identifier)))
+                right: (decimal_integer_literal))
+              consequence: (identifier)
+              alternative: (identifier))))))))
+
+================================================================================
+method with wildcard generic return type
+================================================================================
+class Test {
+    public List<? extends Number> getNumbers() {
+        return null;
+    }
+}
+--------------------------------------------------------------------------------
+
+(source_file
+  (class_declaration
+    name: (identifier)
+    body: (class_body
+      (method_declaration
+        (modifiers)
+        type: (generic_type
+          (type_identifier)
+          (type_arguments
+            (wildcard
+              (type_identifier))))
+        name: (identifier)
+        parameters: (formal_parameters)
+        body: (block
+          (return_statement
+            (null_literal)))))))

@@ -1,0 +1,140 @@
+================================================================================
+annotated local variable with final modifier
+================================================================================
+class Test {
+    void method() {
+        @SuppressWarnings("resource")
+        final ConnectionManager manager = new ConnectionManager();
+    }
+}
+--------------------------------------------------------------------------------
+
+(source_file
+  (class_declaration
+    name: (identifier)
+    body: (class_body
+      (method_declaration
+        type: (void_type)
+        name: (identifier)
+        parameters: (formal_parameters)
+        body: (block
+          (local_variable_declaration
+            (modifiers
+              (annotation
+                name: (identifier)
+                arguments: (annotation_argument_list
+                  (string_literal
+                    (string_fragment)))))
+            type: (type_identifier)
+            declarator: (variable_declarator
+              name: (identifier)
+              value: (object_creation_expression
+                type: (type_identifier)
+                arguments: (argument_list)))))))))
+
+================================================================================
+multiple annotations on local variable
+================================================================================
+class Test {
+    void method() {
+        @SuppressWarnings("resource")
+        @Deprecated
+        final String name = "test";
+    }
+}
+--------------------------------------------------------------------------------
+
+(source_file
+  (class_declaration
+    name: (identifier)
+    body: (class_body
+      (method_declaration
+        type: (void_type)
+        name: (identifier)
+        parameters: (formal_parameters)
+        body: (block
+          (local_variable_declaration
+            (modifiers
+              (annotation
+                name: (identifier)
+                arguments: (annotation_argument_list
+                  (string_literal
+                    (string_fragment))))
+              (marker_annotation
+                name: (identifier)))
+            type: (type_identifier)
+            declarator: (variable_declarator
+              name: (identifier)
+              value: (string_literal
+                (string_fragment)))))))))
+
+================================================================================
+annotated variable without final
+================================================================================
+class Test {
+    void method() {
+        @NotNull
+        String result = compute();
+    }
+}
+--------------------------------------------------------------------------------
+
+(source_file
+  (class_declaration
+    name: (identifier)
+    body: (class_body
+      (method_declaration
+        type: (void_type)
+        name: (identifier)
+        parameters: (formal_parameters)
+        body: (block
+          (local_variable_declaration
+            (modifiers
+              (marker_annotation
+                name: (identifier)))
+            type: (type_identifier)
+            declarator: (variable_declarator
+              name: (identifier)
+              value: (method_invocation
+                name: (identifier)
+                arguments: (argument_list)))))))))
+
+================================================================================
+annotation with complex arguments
+================================================================================
+class Test {
+    void method() {
+        @SuppressWarnings({"unchecked", "rawtypes"})
+        List<String> items = getItems();
+    }
+}
+--------------------------------------------------------------------------------
+
+(source_file
+  (class_declaration
+    name: (identifier)
+    body: (class_body
+      (method_declaration
+        type: (void_type)
+        name: (identifier)
+        parameters: (formal_parameters)
+        body: (block
+          (local_variable_declaration
+            (modifiers
+              (annotation
+                name: (identifier)
+                arguments: (annotation_argument_list
+                  (element_value_array_initializer
+                    (string_literal
+                      (string_fragment))
+                    (string_literal
+                      (string_fragment))))))
+            type: (generic_type
+              (type_identifier)
+              (type_arguments
+                (type_identifier)))
+            declarator: (variable_declarator
+              name: (identifier)
+              value: (method_invocation
+                name: (identifier)
+                arguments: (argument_list)))))))))

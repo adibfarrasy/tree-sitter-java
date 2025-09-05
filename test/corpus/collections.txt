@@ -1,0 +1,161 @@
+================================================================================
+array initializer with elements
+================================================================================
+int[] array = {1, 2, 3};
+--------------------------------------------------------------------------------
+(source_file
+  (local_variable_declaration
+    type: (array_type
+      element: (integral_type)
+      dimensions: (dimensions))
+    declarator: (variable_declarator
+      name: (identifier)
+      value: (array_initializer
+        (decimal_integer_literal)
+        (decimal_integer_literal)
+        (decimal_integer_literal)))))
+
+================================================================================
+nested array initializer
+================================================================================
+int[][] matrix = {{1, 2}, {3, 4}};
+--------------------------------------------------------------------------------
+(source_file
+  (local_variable_declaration
+    type: (array_type
+      element: (integral_type)
+      dimensions: (dimensions))
+    declarator: (variable_declarator
+      name: (identifier)
+      value: (array_initializer
+        (array_initializer
+          (decimal_integer_literal)
+          (decimal_integer_literal))
+        (array_initializer
+          (decimal_integer_literal)
+          (decimal_integer_literal))))))
+
+================================================================================
+empty array initializer
+================================================================================
+int[] array = {};
+--------------------------------------------------------------------------------
+(source_file
+  (local_variable_declaration
+    type: (array_type
+      element: (integral_type)
+      dimensions: (dimensions))
+    declarator: (variable_declarator
+      name: (identifier)
+      value: (array_initializer))))
+
+================================================================================
+array initializer with trailing comma
+================================================================================
+int[] array = {1, 2, 3,};
+--------------------------------------------------------------------------------
+(source_file
+  (local_variable_declaration
+    type: (array_type
+      element: (integral_type)
+      dimensions: (dimensions))
+    declarator: (variable_declarator
+      name: (identifier)
+      value: (array_initializer
+        (decimal_integer_literal)
+        (decimal_integer_literal)
+        (decimal_integer_literal)))))
+
+================================================================================
+array initialization with new
+================================================================================
+new int[]{1, 2, 3};
+--------------------------------------------------------------------------------
+(source_file
+  (expression_statement
+    (array_creation_expression
+      type: (integral_type)
+      dimensions: (dimensions)
+      value: (array_initializer
+        (decimal_integer_literal)
+        (decimal_integer_literal)
+        (decimal_integer_literal)))))
+
+================================================================================
+multidimensional array initialization
+================================================================================
+new int[][]{{1, 2}, {3, 4}};
+--------------------------------------------------------------------------------
+(source_file
+  (expression_statement
+    (array_creation_expression
+      type: (integral_type)
+      dimensions: (dimensions)
+      value: (array_initializer
+        (array_initializer
+          (decimal_integer_literal)
+          (decimal_integer_literal))
+        (array_initializer
+          (decimal_integer_literal)
+          (decimal_integer_literal))))))
+
+================================================================================
+string array initialization
+================================================================================
+new String[]{"hello", "world"};
+--------------------------------------------------------------------------------
+(source_file
+  (expression_statement
+    (array_creation_expression
+      type: (type_identifier)
+      dimensions: (dimensions)
+      value: (array_initializer
+        (string_literal
+          (string_fragment))
+        (string_literal
+          (string_fragment))))))
+
+================================================================================
+array access with expression
+================================================================================
+array[index + 1];
+--------------------------------------------------------------------------------
+(source_file
+  (expression_statement
+    (array_access
+      array: (identifier)
+      index: (binary_expression
+        left: (identifier)
+        right: (decimal_integer_literal)))))
+
+================================================================================
+nested array access
+================================================================================
+matrix[i][j];
+--------------------------------------------------------------------------------
+(source_file
+  (expression_statement
+    (array_access
+      array: (array_access
+        array: (identifier)
+        index: (identifier))
+      index: (identifier))))
+
+================================================================================
+collection with generic type initialization
+================================================================================
+List<String> items = new ArrayList<>();
+--------------------------------------------------------------------------------
+(source_file
+  (local_variable_declaration
+    type: (generic_type
+      (type_identifier)
+      (type_arguments
+        (type_identifier)))
+    declarator: (variable_declarator
+      name: (identifier)
+      value: (object_creation_expression
+        type: (generic_type
+          (type_identifier)
+          (type_arguments))
+        arguments: (argument_list)))))

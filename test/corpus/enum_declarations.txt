@@ -1,0 +1,270 @@
+================================================================================
+simple enum declaration
+================================================================================
+enum Season {
+    SPRING,
+    SUMMER,
+    AUTUMN,
+    WINTER
+}
+--------------------------------------------------------------------------------
+
+(source_file
+  (enum_declaration
+    name: (identifier)
+    body: (enum_body
+      (enum_constant
+        name: (identifier))
+      (enum_constant
+        name: (identifier))
+      (enum_constant
+        name: (identifier))
+      (enum_constant
+        name: (identifier)))))
+
+================================================================================
+enum with constructor after constants
+================================================================================
+enum Status {
+    ACTIVE,
+    INACTIVE;
+
+    Status() {
+    }
+}
+--------------------------------------------------------------------------------
+
+(source_file
+  (enum_declaration
+    name: (identifier)
+    body: (enum_body
+      (enum_constant
+        name: (identifier))
+      (enum_constant
+        name: (identifier))
+      (enum_body_declarations
+        (constructor_declaration
+          name: (identifier)
+          parameters: (formal_parameters)
+          body: (constructor_body))))))
+
+================================================================================
+enum with field and method after constants
+================================================================================
+enum Status {
+    ACTIVE,
+    INACTIVE;
+
+    private String label;
+    
+    public String getLabel() {
+        return label;
+    }
+}
+--------------------------------------------------------------------------------
+
+(source_file
+  (enum_declaration
+    name: (identifier)
+    body: (enum_body
+      (enum_constant
+        name: (identifier))
+      (enum_constant
+        name: (identifier))
+      (enum_body_declarations
+        (field_declaration
+          (modifiers)
+          type: (type_identifier)
+          declarator: (variable_declarator
+            name: (identifier)))
+        (method_declaration
+          (modifiers)
+          type: (type_identifier)
+          name: (identifier)
+          parameters: (formal_parameters)
+          body: (block
+            (return_statement
+              (identifier))))))))
+
+================================================================================
+enum with constructor arguments
+================================================================================
+enum Color {
+    RED(255, 0, 0),
+    GREEN(0, 255, 0),
+    BLUE(0, 0, 255);
+    
+    private final int r, g, b;
+    
+    Color(int r, int g, int b) {
+        this.r = r;
+        this.g = g;
+        this.b = b;
+    }
+}
+--------------------------------------------------------------------------------
+
+(source_file
+  (enum_declaration
+    name: (identifier)
+    body: (enum_body
+      (enum_constant
+        name: (identifier)
+        arguments: (argument_list
+          (decimal_integer_literal)
+          (decimal_integer_literal)
+          (decimal_integer_literal)))
+      (enum_constant
+        name: (identifier)
+        arguments: (argument_list
+          (decimal_integer_literal)
+          (decimal_integer_literal)
+          (decimal_integer_literal)))
+      (enum_constant
+        name: (identifier)
+        arguments: (argument_list
+          (decimal_integer_literal)
+          (decimal_integer_literal)
+          (decimal_integer_literal)))
+      (enum_body_declarations
+        (field_declaration
+          (modifiers)
+          type: (integral_type)
+          declarator: (variable_declarator
+            name: (identifier))
+          declarator: (variable_declarator
+            name: (identifier))
+          declarator: (variable_declarator
+            name: (identifier)))
+        (constructor_declaration
+          name: (identifier)
+          parameters: (formal_parameters
+            (formal_parameter
+              type: (integral_type)
+              name: (identifier))
+            (formal_parameter
+              type: (integral_type)
+              name: (identifier))
+            (formal_parameter
+              type: (integral_type)
+              name: (identifier)))
+          body: (constructor_body
+            (expression_statement
+              (assignment_expression
+                left: (field_access
+                  object: (this)
+                  field: (identifier))
+                right: (identifier)))
+            (expression_statement
+              (assignment_expression
+                left: (field_access
+                  object: (this)
+                  field: (identifier))
+                right: (identifier)))
+            (expression_statement
+              (assignment_expression
+                left: (field_access
+                  object: (this)
+                  field: (identifier))
+                right: (identifier)))))))))
+
+================================================================================
+enum with class body
+================================================================================
+enum Operation {
+    PLUS {
+        public double apply(double x, double y) {
+            return x + y;
+        }
+    },
+    MINUS {
+        public double apply(double x, double y) {
+            return x - y;
+        }
+    };
+    
+    public abstract double apply(double x, double y);
+}
+--------------------------------------------------------------------------------
+
+(source_file
+  (enum_declaration
+    name: (identifier)
+    body: (enum_body
+      (enum_constant
+        name: (identifier)
+        body: (class_body
+          (method_declaration
+            (modifiers)
+            type: (floating_point_type)
+            name: (identifier)
+            parameters: (formal_parameters
+              (formal_parameter
+                type: (floating_point_type)
+                name: (identifier))
+              (formal_parameter
+                type: (floating_point_type)
+                name: (identifier)))
+            body: (block
+              (return_statement
+                (binary_expression
+                  left: (identifier)
+                  right: (identifier)))))))
+      (enum_constant
+        name: (identifier)
+        body: (class_body
+          (method_declaration
+            (modifiers)
+            type: (floating_point_type)
+            name: (identifier)
+            parameters: (formal_parameters
+              (formal_parameter
+                type: (floating_point_type)
+                name: (identifier))
+              (formal_parameter
+                type: (floating_point_type)
+                name: (identifier)))
+            body: (block
+              (return_statement
+                (binary_expression
+                  left: (identifier)
+                  right: (identifier)))))))
+      (enum_body_declarations
+        (method_declaration
+          (modifiers)
+          type: (floating_point_type)
+          name: (identifier)
+          parameters: (formal_parameters
+            (formal_parameter
+              type: (floating_point_type)
+              name: (identifier))
+            (formal_parameter
+              type: (floating_point_type)
+              name: (identifier))))))))
+
+================================================================================
+enum with implements clause
+================================================================================
+enum Priority implements Comparable<Priority> {
+    LOW,
+    MEDIUM,
+    HIGH
+}
+--------------------------------------------------------------------------------
+
+(source_file
+  (enum_declaration
+    name: (identifier)
+    interfaces: (super_interfaces
+      (type_list
+        (generic_type
+          (type_identifier)
+          (type_arguments
+            (type_identifier)))))
+    body: (enum_body
+      (enum_constant
+        name: (identifier))
+      (enum_constant
+        name: (identifier))
+      (enum_constant
+        name: (identifier)))))

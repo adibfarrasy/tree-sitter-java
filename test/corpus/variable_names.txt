@@ -1,0 +1,192 @@
+================================================================================
+simple variable names
+================================================================================
+int a;
+String name;
+boolean isValid;
+--------------------------------------------------------------------------------
+
+(source_file
+  (local_variable_declaration
+    type: (integral_type)
+    declarator: (variable_declarator
+      name: (identifier)))
+  (local_variable_declaration
+    type: (type_identifier)
+    declarator: (variable_declarator
+      name: (identifier)))
+  (local_variable_declaration
+    type: (boolean_type)
+    declarator: (variable_declarator
+      name: (identifier))))
+
+================================================================================
+variable names with underscores
+================================================================================
+int max_value;
+String first_name;
+boolean is_enabled;
+--------------------------------------------------------------------------------
+
+(source_file
+  (local_variable_declaration
+    type: (integral_type)
+    declarator: (variable_declarator
+      name: (identifier)))
+  (local_variable_declaration
+    type: (type_identifier)
+    declarator: (variable_declarator
+      name: (identifier)))
+  (local_variable_declaration
+    type: (boolean_type)
+    declarator: (variable_declarator
+      name: (identifier))))
+
+================================================================================
+variable names with numbers
+================================================================================
+int value1;
+String text2;
+boolean flag3;
+--------------------------------------------------------------------------------
+
+(source_file
+  (local_variable_declaration
+    type: (integral_type)
+    declarator: (variable_declarator
+      name: (identifier)))
+  (local_variable_declaration
+    type: (type_identifier)
+    declarator: (variable_declarator
+      name: (identifier)))
+  (local_variable_declaration
+    type: (boolean_type)
+    declarator: (variable_declarator
+      name: (identifier))))
+
+================================================================================
+variable names with dollar signs
+================================================================================
+int $value;
+String $name;
+boolean $isValid;
+--------------------------------------------------------------------------------
+
+(source_file
+  (local_variable_declaration
+    type: (integral_type)
+    declarator: (variable_declarator
+      name: (identifier)))
+  (local_variable_declaration
+    type: (type_identifier)
+    declarator: (variable_declarator
+      name: (identifier)))
+  (local_variable_declaration
+    type: (boolean_type)
+    declarator: (variable_declarator
+      name: (identifier))))
+
+================================================================================
+long variable names
+================================================================================
+int thisIsAVeryLongVariableName;
+String anotherExtremelyLongVariableNameThatTestsTheLimits;
+--------------------------------------------------------------------------------
+
+(source_file
+  (local_variable_declaration
+    type: (integral_type)
+    declarator: (variable_declarator
+      name: (identifier)))
+  (local_variable_declaration
+    type: (type_identifier)
+    declarator: (variable_declarator
+      name: (identifier))))
+
+================================================================================
+single character variable names
+================================================================================
+int i;
+String s;
+boolean b;
+--------------------------------------------------------------------------------
+
+(source_file
+  (local_variable_declaration
+    type: (integral_type)
+    declarator: (variable_declarator
+      name: (identifier)))
+  (local_variable_declaration
+    type: (type_identifier)
+    declarator: (variable_declarator
+      name: (identifier)))
+  (local_variable_declaration
+    type: (boolean_type)
+    declarator: (variable_declarator
+      name: (identifier))))
+
+================================================================================
+variable names with mixed case
+================================================================================
+int camelCaseVariable;
+String PascalCaseVariable;
+boolean UPPER_CASE_VARIABLE;
+--------------------------------------------------------------------------------
+
+(source_file
+  (local_variable_declaration
+    type: (integral_type)
+    declarator: (variable_declarator
+      name: (identifier)))
+  (local_variable_declaration
+    type: (type_identifier)
+    declarator: (variable_declarator
+      name: (identifier)))
+  (local_variable_declaration
+    type: (boolean_type)
+    declarator: (variable_declarator
+      name: (identifier))))
+
+================================================================================
+variable names that are keywords in other languages
+================================================================================
+int var;
+String let;
+boolean const;
+--------------------------------------------------------------------------------
+
+(source_file
+  (local_variable_declaration
+    type: (integral_type)
+    declarator: (variable_declarator
+      name: (identifier)))
+  (local_variable_declaration
+    type: (type_identifier)
+    declarator: (variable_declarator
+      name: (identifier)))
+  (local_variable_declaration
+    type: (boolean_type)
+    declarator: (variable_declarator
+      name: (identifier))))
+
+================================================================================
+unicode variable names
+================================================================================
+int α;
+String β;
+boolean γ;
+--------------------------------------------------------------------------------
+
+(source_file
+  (local_variable_declaration
+    type: (integral_type)
+    declarator: (variable_declarator
+      name: (identifier)))
+  (local_variable_declaration
+    type: (type_identifier)
+    declarator: (variable_declarator
+      name: (identifier)))
+  (local_variable_declaration
+    type: (boolean_type)
+    declarator: (variable_declarator
+      name: (identifier))))

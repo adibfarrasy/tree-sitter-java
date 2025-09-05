@@ -1,0 +1,52 @@
+
+================================================================================
+method arguments without trailing comma (Java standard)
+================================================================================
+String.format("Hello %s %s", name, surname);
+--------------------------------------------------------------------------------
+
+(source_file
+  (expression_statement
+    (method_invocation
+      object: (identifier)
+      name: (identifier)
+      arguments: (argument_list
+        (string_literal
+          (string_fragment))
+        (identifier)
+        (identifier)))))
+
+================================================================================
+object creation arguments without trailing comma (Java standard)
+================================================================================
+new Point(x, y);
+--------------------------------------------------------------------------------
+
+(source_file
+  (expression_statement
+    (object_creation_expression
+      type: (type_identifier)
+      arguments: (argument_list
+        (identifier)
+        (identifier)))))
+
+================================================================================
+generic type arguments (no trailing comma allowed)
+================================================================================
+List<String> items = new ArrayList<String>();
+--------------------------------------------------------------------------------
+
+(source_file
+  (local_variable_declaration
+    type: (generic_type
+      (type_identifier)
+      (type_arguments
+        (type_identifier)))
+    declarator: (variable_declarator
+      name: (identifier)
+      value: (object_creation_expression
+        type: (generic_type
+          (type_identifier)
+          (type_arguments
+            (type_identifier)))
+        arguments: (argument_list)))))

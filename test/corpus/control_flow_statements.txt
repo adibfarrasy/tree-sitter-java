@@ -1,0 +1,274 @@
+================================================================================
+continue statement
+================================================================================
+class Test {
+    void method() {
+        for (int i = 0; i < 10; i++) {
+            if (skip) continue;
+            process(i);
+        }
+    }
+}
+--------------------------------------------------------------------------------
+
+(source_file
+  (class_declaration
+    name: (identifier)
+    body: (class_body
+      (method_declaration
+        type: (void_type)
+        name: (identifier)
+        parameters: (formal_parameters)
+        body: (block
+          (for_statement
+            init: (local_variable_declaration
+              type: (integral_type)
+              declarator: (variable_declarator
+                name: (identifier)
+                value: (decimal_integer_literal)))
+            condition: (binary_expression
+              left: (identifier)
+              right: (decimal_integer_literal))
+            update: (update_expression
+              (identifier))
+            body: (block
+              (if_statement
+                condition: (parenthesized_expression
+                  (identifier))
+                consequence: (continue_statement))
+              (expression_statement
+                (method_invocation
+                  name: (identifier)
+                  arguments: (argument_list
+                    (identifier)))))))))))
+
+================================================================================
+break statement
+================================================================================
+class Test {
+    void method() {
+        while (true) {
+            if (done) break;
+            work();
+        }
+    }
+}
+--------------------------------------------------------------------------------
+
+(source_file
+  (class_declaration
+    name: (identifier)
+    body: (class_body
+      (method_declaration
+        type: (void_type)
+        name: (identifier)
+        parameters: (formal_parameters)
+        body: (block
+          (while_statement
+            condition: (parenthesized_expression
+              (true))
+            body: (block
+              (if_statement
+                condition: (parenthesized_expression
+                  (identifier))
+                consequence: (break_statement))
+              (expression_statement
+                (method_invocation
+                  name: (identifier)
+                  arguments: (argument_list))))))))))
+
+================================================================================
+return statement with value
+================================================================================
+class Test {
+    int method() {
+        if (hasData) return result;
+        return defaultValue;
+    }
+}
+--------------------------------------------------------------------------------
+
+(source_file
+  (class_declaration
+    name: (identifier)
+    body: (class_body
+      (method_declaration
+        type: (integral_type)
+        name: (identifier)
+        parameters: (formal_parameters)
+        body: (block
+          (if_statement
+            condition: (parenthesized_expression
+              (identifier))
+            consequence: (return_statement
+              (identifier)))
+          (return_statement
+            (identifier)))))))
+
+================================================================================
+return statement without value
+================================================================================
+class Test {
+    void method() {
+        if (error) return;
+        doWork();
+    }
+}
+--------------------------------------------------------------------------------
+
+(source_file
+  (class_declaration
+    name: (identifier)
+    body: (class_body
+      (method_declaration
+        type: (void_type)
+        name: (identifier)
+        parameters: (formal_parameters)
+        body: (block
+          (if_statement
+            condition: (parenthesized_expression
+              (identifier))
+            consequence: (return_statement))
+          (expression_statement
+            (method_invocation
+              name: (identifier)
+              arguments: (argument_list))))))))
+
+================================================================================
+labeled break statement
+================================================================================
+class Test {
+    void method() {
+        outer: for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                if (found) break outer;
+            }
+        }
+    }
+}
+--------------------------------------------------------------------------------
+
+(source_file
+  (class_declaration
+    name: (identifier)
+    body: (class_body
+      (method_declaration
+        type: (void_type)
+        name: (identifier)
+        parameters: (formal_parameters)
+        body: (block
+          (labeled_statement
+            (identifier)
+            (for_statement
+              init: (local_variable_declaration
+                type: (integral_type)
+                declarator: (variable_declarator
+                  name: (identifier)
+                  value: (decimal_integer_literal)))
+              condition: (binary_expression
+                left: (identifier)
+                right: (decimal_integer_literal))
+              update: (update_expression
+                (identifier))
+              body: (block
+                (for_statement
+                  init: (local_variable_declaration
+                    type: (integral_type)
+                    declarator: (variable_declarator
+                      name: (identifier)
+                      value: (decimal_integer_literal)))
+                  condition: (binary_expression
+                    left: (identifier)
+                    right: (decimal_integer_literal))
+                  update: (update_expression
+                    (identifier))
+                  body: (block
+                    (if_statement
+                      condition: (parenthesized_expression
+                        (identifier))
+                      consequence: (break_statement
+                        (identifier)))))))))))))
+
+================================================================================
+labeled continue statement
+================================================================================
+class Test {
+    void method() {
+        outer: for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                if (skip) continue outer;
+            }
+        }
+    }
+}
+--------------------------------------------------------------------------------
+
+(source_file
+  (class_declaration
+    name: (identifier)
+    body: (class_body
+      (method_declaration
+        type: (void_type)
+        name: (identifier)
+        parameters: (formal_parameters)
+        body: (block
+          (labeled_statement
+            (identifier)
+            (for_statement
+              init: (local_variable_declaration
+                type: (integral_type)
+                declarator: (variable_declarator
+                  name: (identifier)
+                  value: (decimal_integer_literal)))
+              condition: (binary_expression
+                left: (identifier)
+                right: (decimal_integer_literal))
+              update: (update_expression
+                (identifier))
+              body: (block
+                (for_statement
+                  init: (local_variable_declaration
+                    type: (integral_type)
+                    declarator: (variable_declarator
+                      name: (identifier)
+                      value: (decimal_integer_literal)))
+                  condition: (binary_expression
+                    left: (identifier)
+                    right: (decimal_integer_literal))
+                  update: (update_expression
+                    (identifier))
+                  body: (block
+                    (if_statement
+                      condition: (parenthesized_expression
+                        (identifier))
+                      consequence: (continue_statement
+                        (identifier)))))))))))))
+
+================================================================================
+throw statement
+================================================================================
+class Test {
+    void method() {
+        if (invalid) throw new IllegalArgumentException("Invalid input");
+    }
+}
+--------------------------------------------------------------------------------
+
+(source_file
+  (class_declaration
+    name: (identifier)
+    body: (class_body
+      (method_declaration
+        type: (void_type)
+        name: (identifier)
+        parameters: (formal_parameters)
+        body: (block
+          (if_statement
+            condition: (parenthesized_expression
+              (identifier))
+            consequence: (throw_statement
+              (object_creation_expression
+                type: (type_identifier)
+                arguments: (argument_list
+                  (string_literal
+                    (string_fragment)))))))))))

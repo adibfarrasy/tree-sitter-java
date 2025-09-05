@@ -1,0 +1,118 @@
+================================================================================
+java style cast
+================================================================================
+(String) value;
+--------------------------------------------------------------------------------
+(source_file
+  (expression_statement
+    (cast_expression
+      type: (type_identifier)
+      value: (identifier))))
+
+================================================================================
+cast with generic type
+================================================================================
+(List<String>) value;
+--------------------------------------------------------------------------------
+(source_file
+  (expression_statement
+    (cast_expression
+      type: (generic_type
+        (type_identifier)
+        (type_arguments
+          (type_identifier)))
+      value: (identifier))))
+
+================================================================================
+cast with array type
+================================================================================
+(String[]) value;
+--------------------------------------------------------------------------------
+(source_file
+  (expression_statement
+    (cast_expression
+      type: (array_type
+        element: (type_identifier)
+        dimensions: (dimensions))
+      value: (identifier))))
+
+================================================================================
+cast with primitive type
+================================================================================
+(int) 3.14;
+--------------------------------------------------------------------------------
+(source_file
+  (expression_statement
+    (cast_expression
+      type: (integral_type)
+      value: (decimal_floating_point_literal))))
+
+================================================================================
+complex cast expression
+================================================================================
+((Map<String, Integer>) data).get("key");
+--------------------------------------------------------------------------------
+(source_file
+  (expression_statement
+    (method_invocation
+      object: (parenthesized_expression
+        (cast_expression
+          type: (generic_type
+            (type_identifier)
+            (type_arguments
+              (type_identifier)
+              (type_identifier)))
+          value: (identifier)))
+      name: (identifier)
+      arguments: (argument_list
+        (string_literal
+          (string_fragment))))))
+
+================================================================================
+nested cast expression
+================================================================================
+((String) ((Object) value)).length();
+--------------------------------------------------------------------------------
+(source_file
+  (expression_statement
+    (method_invocation
+      object: (parenthesized_expression
+        (cast_expression
+          type: (type_identifier)
+          value: (parenthesized_expression
+            (cast_expression
+              type: (type_identifier)
+              value: (identifier)))))
+      name: (identifier)
+      arguments: (argument_list))))
+
+================================================================================
+cast in method call
+================================================================================
+doSomething((Integer) value, (String) name);
+--------------------------------------------------------------------------------
+(source_file
+  (expression_statement
+    (method_invocation
+      name: (identifier)
+      arguments: (argument_list
+        (cast_expression
+          type: (type_identifier)
+          value: (identifier))
+        (cast_expression
+          type: (type_identifier)
+          value: (identifier))))))
+
+================================================================================
+cast with wildcard generic
+================================================================================
+(List<?>) items;
+--------------------------------------------------------------------------------
+(source_file
+  (expression_statement
+    (cast_expression
+      type: (generic_type
+        (type_identifier)
+        (type_arguments
+          (wildcard)))
+      value: (identifier))))

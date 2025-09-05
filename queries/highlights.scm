@@ -25,6 +25,8 @@
   name: (identifier) @type)
 (enum_declaration
   name: (identifier) @type)
+(annotation_type_declaration
+  name: (identifier) @type)
 
 ((field_access
   object: (identifier) @type)
@@ -47,7 +49,7 @@
   (integral_type)
   (floating_point_type)
   (void_type)
-] @type.builtin
+] @keyword
 
 ; Constants
 
@@ -56,7 +58,7 @@
 
 ; Builtins
 
-(this) @variable.builtin
+(this) @keyword
 
 ; Literals
 
@@ -78,7 +80,7 @@
   (true)
   (false)
   (null_literal)
-] @constant.builtin
+] @keyword
 
 [
   (line_comment)
@@ -109,6 +111,7 @@
   "import"
   "instanceof"
   "interface"
+  "@interface"
   "module"
   "native"
   "new"
