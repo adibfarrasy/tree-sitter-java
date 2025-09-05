@@ -323,7 +323,7 @@ for (j.init(i); j.check(); j.update()) {
 
 (source_file
   (for_statement
-    init: (local_variable_declaration
+    init: (variable_declaration
       type: (integral_type)
       declarator: (variable_declarator
         name: (identifier)
@@ -411,18 +411,18 @@ class WhileDemo {
   (class_declaration
     name: (identifier)
     body: (class_body
-      (method_declaration
+      (function_declaration
         (modifiers)
         type: (void_type)
         name: (identifier)
-        parameters: (formal_parameters
-          (formal_parameter
+        parameters: (parameters
+          (parameter
             type: (array_type
               element: (type_identifier)
               dimensions: (dimensions))
             name: (identifier)))
         body: (block
-          (local_variable_declaration
+          (variable_declaration
             type: (integral_type)
             declarator: (variable_declarator
               name: (identifier)
@@ -470,7 +470,7 @@ try (FileInputStream input = new FileInputStream("file.txt")) {
             (string_literal
               (string_fragment))))))
     body: (block
-      (local_variable_declaration
+      (variable_declaration
         type: (integral_type)
         declarator: (variable_declarator
           name: (identifier)
@@ -563,13 +563,13 @@ class Quack {
         (identifier)))
     (identifier)
     (class_body
-      (method_declaration
+      (function_declaration
         (modifiers
           (marker_annotation
             (identifier)))
         (void_type)
         (identifier)
-        (formal_parameters)
+        (parameters)
         (block)))))
 
 ================================================================================
@@ -610,7 +610,7 @@ String[] allMyStrings = new @Nullable String[5];
 --------------------------------------------------------------------------------
 
 (source_file
-  (local_variable_declaration
+  (variable_declaration
     (array_type
       (type_identifier)
       (dimensions))
@@ -640,10 +640,10 @@ class LambdaTest {
   (class_declaration
     (identifier)
     (class_body
-      (method_declaration
+      (function_declaration
         (void_type)
         (identifier)
-        (formal_parameters)
+        (parameters)
         (block
           (expression_statement
             (lambda_expression
@@ -687,23 +687,23 @@ public class SwitchDemo {
     (modifiers)
     name: (identifier)
     body: (class_body
-      (method_declaration
+      (function_declaration
         (modifiers)
         type: (void_type)
         name: (identifier)
-        parameters: (formal_parameters
-          (formal_parameter
+        parameters: (parameters
+          (parameter
             type: (array_type
               element: (type_identifier)
               dimensions: (dimensions))
             name: (identifier)))
         body: (block
-          (local_variable_declaration
+          (variable_declaration
             type: (integral_type)
             declarator: (variable_declarator
               name: (identifier)
               value: (decimal_integer_literal)))
-          (local_variable_declaration
+          (variable_declaration
             type: (type_identifier)
             declarator: (variable_declarator
               name: (identifier)))
@@ -783,20 +783,20 @@ class Test {
         type: (integral_type)
         declarator: (variable_declarator
           name: (identifier)))
-      (method_declaration
+      (function_declaration
         type: (integral_type)
         name: (identifier)
-        parameters: (formal_parameters
-          (formal_parameter
+        parameters: (parameters
+          (parameter
             type: (integral_type)
             name: (identifier)))
         body: (block
           (return_statement
             (decimal_integer_literal))))
-      (method_declaration
+      (function_declaration
         type: (void_type)
         name: (identifier)
-        parameters: (formal_parameters)
+        parameters: (parameters)
         body: (block
           (switch_expression
             condition: (parenthesized_expression
@@ -866,12 +866,12 @@ class Test {
         declarator: (variable_declarator
           name: (identifier)
           value: (decimal_integer_literal)))
-      (method_declaration
+      (function_declaration
         type: (void_type)
         name: (identifier)
-        parameters: (formal_parameters)
+        parameters: (parameters)
         body: (block
-          (local_variable_declaration
+          (variable_declaration
             type: (integral_type)
             declarator: (variable_declarator
               name: (identifier)
@@ -937,12 +937,12 @@ class Test {
         declarator: (variable_declarator
           name: (identifier)
           value: (decimal_integer_literal)))
-      (method_declaration
+      (function_declaration
         type: (void_type)
         name: (identifier)
-        parameters: (formal_parameters)
+        parameters: (parameters)
         body: (block
-          (local_variable_declaration
+          (variable_declaration
             type: (integral_type)
             declarator: (variable_declarator
               name: (identifier)
@@ -997,12 +997,12 @@ class Test {
         type: (integral_type)
         declarator: (variable_declarator
           name: (identifier)))
-      (method_declaration
+      (function_declaration
         type: (void_type)
         name: (identifier)
-        parameters: (formal_parameters)
+        parameters: (parameters)
         body: (block
-          (local_variable_declaration
+          (variable_declaration
             type: (integral_type)
             declarator: (variable_declarator
               name: (identifier)
@@ -1024,7 +1024,7 @@ class Test {
                   (switch_rule
                     (switch_label)
                     (block
-                      (local_variable_declaration
+                      (variable_declaration
                         type: (integral_type)
                         declarator: (variable_declarator
                           name: (identifier)
@@ -1054,20 +1054,20 @@ class Test {
         type: (integral_type)
         declarator: (variable_declarator
           name: (identifier)))
-      (method_declaration
+      (function_declaration
         (modifiers)
         type: (void_type)
         name: (identifier)
-        parameters: (formal_parameters
-          (formal_parameter
+        parameters: (parameters
+          (parameter
             type: (integral_type)
             name: (identifier))
-          (formal_parameter
+          (parameter
             type: (integral_type)
             name: (identifier)))
         body: (block
           (line_comment)
-          (local_variable_declaration
+          (variable_declaration
             type: (integral_type)
             declarator: (variable_declarator
               name: (identifier)
@@ -1115,16 +1115,16 @@ class Test {
         (integral_type)
         (variable_declarator
           (identifier)))
-      (method_declaration
+      (function_declaration
         (modifiers)
         (void_type)
         (identifier)
-        (formal_parameters
-          (formal_parameter
+        (parameters
+          (parameter
             (boolean_type)
             (identifier)))
         (block
-          (local_variable_declaration
+          (variable_declaration
             (integral_type)
             (variable_declarator
               (identifier)))
@@ -1169,13 +1169,13 @@ public class Patterns {
     (modifiers)
     (identifier)
     (class_body
-      (method_declaration
+      (function_declaration
         (modifiers)
         (void_type)
         (identifier)
-        (formal_parameters)
+        (parameters)
         (block
-          (local_variable_declaration
+          (variable_declaration
             (type_identifier)
             (variable_declarator
               (identifier)
@@ -1286,11 +1286,11 @@ public class Switches {
     (modifiers)
     (identifier)
     (class_body
-      (method_declaration
+      (function_declaration
         (modifiers)
         (void_type)
         (identifier)
-        (formal_parameters)
+        (parameters)
         (block
           (switch_expression
             (parenthesized_expression
@@ -1380,8 +1380,8 @@ class Box <T> {
       (constructor_declaration
         (modifiers)
         (identifier)
-        (formal_parameters
-          (formal_parameter
+        (parameters
+          (parameter
             (type_identifier)
             (identifier)))
         (constructor_body
@@ -1437,16 +1437,16 @@ class someClass <T> {
       (type_parameter
         (type_identifier)))
     (class_body
-      (method_declaration
+      (function_declaration
         (modifiers)
         (generic_type
           (type_identifier)
           (type_arguments
             (type_identifier)))
         (identifier)
-        (formal_parameters)
+        (parameters)
         (block
-          (local_variable_declaration
+          (variable_declaration
             (generic_type
               (type_identifier)
               (type_arguments
@@ -1461,19 +1461,19 @@ class someClass <T> {
                 (argument_list))))
           (return_statement
             (identifier))))
-      (method_declaration
+      (function_declaration
         (modifiers)
         (type_parameters
           (type_parameter
             (type_identifier)))
         (void_type)
         (identifier)
-        (formal_parameters
-          (formal_parameter
+        (parameters
+          (parameter
             (type_identifier)
             (identifier)))
         (block
-          (local_variable_declaration
+          (variable_declaration
             (generic_type
               (type_identifier)
               (type_arguments
@@ -1496,7 +1496,7 @@ Box<Integer> integerBox = new Box<>();
 --------------------------------------------------------------------------------
 
 (source_file
-  (local_variable_declaration
+  (variable_declaration
     (generic_type
       (type_identifier)
       (type_arguments
@@ -1581,7 +1581,7 @@ java.util.List<java.lang.Integer> x = null;
 --------------------------------------------------------------------------------
 
 (source_file
-  (local_variable_declaration
+  (variable_declaration
     (generic_type
       (scoped_type_identifier
         (type_identifier)
@@ -1591,7 +1591,7 @@ java.util.List<java.lang.Integer> x = null;
     (variable_declarator
       (identifier)
       (null_literal)))
-  (local_variable_declaration
+  (variable_declaration
     (generic_type
       (scoped_type_identifier
         (scoped_type_identifier
@@ -1603,7 +1603,7 @@ java.util.List<java.lang.Integer> x = null;
     (variable_declarator
       (identifier)
       (null_literal)))
-  (local_variable_declaration
+  (variable_declaration
     (generic_type
       (scoped_type_identifier
         (scoped_type_identifier
@@ -1869,7 +1869,7 @@ try {
 --------------------------------------------------------------------------------
 
 (source_file
-  (local_variable_declaration
+  (variable_declaration
     (integral_type)
     (variable_declarator
       (underscore_pattern)
@@ -1877,18 +1877,18 @@ try {
   (try_statement
     (block)
     (catch_clause
-      (catch_formal_parameter
+      (catch_parameter
         (catch_type
           (type_identifier))
         (underscore_pattern))
       (block)))
   (expression_statement
     (lambda_expression
-      (formal_parameters
-        (formal_parameter
+      (parameters
+        (parameter
           (integral_type)
           (identifier))
-        (formal_parameter
+        (parameter
           (integral_type)
           (underscore_pattern)))
       (binary_expression
@@ -1913,7 +1913,7 @@ for (int i = 0, _ = sideEffect(); i < 10; i++) { }
     (identifier)
     (block))
   (for_statement
-    (local_variable_declaration
+    (variable_declaration
       (integral_type)
       (variable_declarator
         (identifier)
@@ -1940,10 +1940,10 @@ void foo(int... @Foo x) {
 ---
 
 (source_file
-  (method_declaration
+  (function_declaration
     (void_type)
     (identifier)
-    (formal_parameters
+    (parameters
       (spread_parameter
         (integral_type)
         (marker_annotation

@@ -11,11 +11,11 @@ class Test {
   (class_declaration
     name: (identifier)
     body: (class_body
-      (method_declaration
+      (function_declaration
         (modifiers)
         type: (void_type)
         name: (identifier)
-        parameters: (formal_parameters)
+        parameters: (parameters)
         body: (block)))))
 
 ================================================================================
@@ -32,15 +32,15 @@ class Test {
   (class_declaration
     name: (identifier)
     body: (class_body
-      (method_declaration
+      (function_declaration
         (modifiers)
         type: (integral_type)
         name: (identifier)
-        parameters: (formal_parameters
-          (formal_parameter
+        parameters: (parameters
+          (parameter
             type: (integral_type)
             name: (identifier))
-          (formal_parameter
+          (parameter
             type: (integral_type)
             name: (identifier)))
         body: (block
@@ -63,12 +63,12 @@ class Test {
   (class_declaration
     name: (identifier)
     body: (class_body
-      (method_declaration
+      (function_declaration
         (modifiers)
         type: (type_identifier)
         name: (identifier)
-        parameters: (formal_parameters
-          (formal_parameter
+        parameters: (parameters
+          (parameter
             type: (type_identifier)
             name: (identifier))
           (spread_parameter
@@ -92,11 +92,11 @@ abstract class Test {
     (modifiers)
     name: (identifier)
     body: (class_body
-      (method_declaration
+      (function_declaration
         (modifiers)
         type: (void_type)
         name: (identifier)
-        parameters: (formal_parameters)))))
+        parameters: (parameters)))))
 
 ================================================================================
 method with generic type parameters
@@ -112,7 +112,7 @@ class Test {
   (class_declaration
     name: (identifier)
     body: (class_body
-      (method_declaration
+      (function_declaration
         (modifiers)
         type_parameters: (type_parameters
           (type_parameter
@@ -122,8 +122,8 @@ class Test {
           (type_arguments
             (type_identifier)))
         name: (identifier)
-        parameters: (formal_parameters
-          (formal_parameter
+        parameters: (parameters
+          (parameter
             type: (array_type
               element: (type_identifier)
               dimensions: (dimensions))
@@ -145,12 +145,12 @@ class Test {
   (class_declaration
     name: (identifier)
     body: (class_body
-      (method_declaration
+      (function_declaration
         (modifiers)
         type: (void_type)
         name: (identifier)
-        parameters: (formal_parameters
-          (formal_parameter
+        parameters: (parameters
+          (parameter
             type: (type_identifier)
             name: (identifier)))
         (throws
@@ -174,7 +174,7 @@ class Test {
   (class_declaration
     name: (identifier)
     body: (class_body
-      (method_declaration
+      (function_declaration
         (modifiers
           (marker_annotation
             name: (identifier))
@@ -185,7 +185,7 @@ class Test {
                 (string_fragment)))))
         type: (type_identifier)
         name: (identifier)
-        parameters: (formal_parameters)
+        parameters: (parameters)
         body: (block
           (return_statement
             (string_literal
@@ -204,16 +204,16 @@ class Test {
   (class_declaration
     name: (identifier)
     body: (class_body
-      (method_declaration
+      (function_declaration
         (modifiers)
         type: (void_type)
         name: (identifier)
-        parameters: (formal_parameters
-          (formal_parameter
+        parameters: (parameters
+          (parameter
             (modifiers)
             type: (type_identifier)
             name: (identifier))
-          (formal_parameter
+          (parameter
             (modifiers)
             type: (integral_type)
             name: (identifier)))
@@ -232,11 +232,11 @@ class Test {
   (class_declaration
     name: (identifier)
     body: (class_body
-      (method_declaration
+      (function_declaration
         (modifiers)
         type: (void_type)
         name: (identifier)
-        parameters: (formal_parameters)
+        parameters: (parameters)
         body: (block)))))
 
 ================================================================================
@@ -253,11 +253,11 @@ interface Test {
   (interface_declaration
     name: (identifier)
     body: (interface_body
-      (method_declaration
+      (function_declaration
         (modifiers)
         type: (void_type)
         name: (identifier)
-        parameters: (formal_parameters)
+        parameters: (parameters)
         body: (block
           (expression_statement
             (method_invocation
@@ -283,7 +283,7 @@ class Test {
   (class_declaration
     name: (identifier)
     body: (class_body
-      (method_declaration
+      (function_declaration
         (modifiers)
         type_parameters: (type_parameters
           (type_parameter
@@ -295,11 +295,11 @@ class Test {
                   (type_identifier))))))
         type: (type_identifier)
         name: (identifier)
-        parameters: (formal_parameters
-          (formal_parameter
+        parameters: (parameters
+          (parameter
             type: (type_identifier)
             name: (identifier))
-          (formal_parameter
+          (parameter
             type: (type_identifier)
             name: (identifier)))
         body: (block
@@ -329,7 +329,7 @@ class Test {
   (class_declaration
     name: (identifier)
     body: (class_body
-      (method_declaration
+      (function_declaration
         (modifiers)
         type: (generic_type
           (type_identifier)
@@ -337,7 +337,7 @@ class Test {
             (wildcard
               (type_identifier))))
         name: (identifier)
-        parameters: (formal_parameters)
+        parameters: (parameters)
         body: (block
           (return_statement
             (null_literal)))))))

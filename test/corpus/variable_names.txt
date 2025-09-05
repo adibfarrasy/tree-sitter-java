@@ -7,15 +7,15 @@ boolean isValid;
 --------------------------------------------------------------------------------
 
 (source_file
-  (local_variable_declaration
+  (variable_declaration
     type: (integral_type)
     declarator: (variable_declarator
       name: (identifier)))
-  (local_variable_declaration
+  (variable_declaration
     type: (type_identifier)
     declarator: (variable_declarator
       name: (identifier)))
-  (local_variable_declaration
+  (variable_declaration
     type: (boolean_type)
     declarator: (variable_declarator
       name: (identifier))))
@@ -29,15 +29,15 @@ boolean is_enabled;
 --------------------------------------------------------------------------------
 
 (source_file
-  (local_variable_declaration
+  (variable_declaration
     type: (integral_type)
     declarator: (variable_declarator
       name: (identifier)))
-  (local_variable_declaration
+  (variable_declaration
     type: (type_identifier)
     declarator: (variable_declarator
       name: (identifier)))
-  (local_variable_declaration
+  (variable_declaration
     type: (boolean_type)
     declarator: (variable_declarator
       name: (identifier))))
@@ -51,15 +51,15 @@ boolean flag3;
 --------------------------------------------------------------------------------
 
 (source_file
-  (local_variable_declaration
+  (variable_declaration
     type: (integral_type)
     declarator: (variable_declarator
       name: (identifier)))
-  (local_variable_declaration
+  (variable_declaration
     type: (type_identifier)
     declarator: (variable_declarator
       name: (identifier)))
-  (local_variable_declaration
+  (variable_declaration
     type: (boolean_type)
     declarator: (variable_declarator
       name: (identifier))))
@@ -73,15 +73,15 @@ boolean $isValid;
 --------------------------------------------------------------------------------
 
 (source_file
-  (local_variable_declaration
+  (variable_declaration
     type: (integral_type)
     declarator: (variable_declarator
       name: (identifier)))
-  (local_variable_declaration
+  (variable_declaration
     type: (type_identifier)
     declarator: (variable_declarator
       name: (identifier)))
-  (local_variable_declaration
+  (variable_declaration
     type: (boolean_type)
     declarator: (variable_declarator
       name: (identifier))))
@@ -94,11 +94,11 @@ String anotherExtremelyLongVariableNameThatTestsTheLimits;
 --------------------------------------------------------------------------------
 
 (source_file
-  (local_variable_declaration
+  (variable_declaration
     type: (integral_type)
     declarator: (variable_declarator
       name: (identifier)))
-  (local_variable_declaration
+  (variable_declaration
     type: (type_identifier)
     declarator: (variable_declarator
       name: (identifier))))
@@ -112,15 +112,15 @@ boolean b;
 --------------------------------------------------------------------------------
 
 (source_file
-  (local_variable_declaration
+  (variable_declaration
     type: (integral_type)
     declarator: (variable_declarator
       name: (identifier)))
-  (local_variable_declaration
+  (variable_declaration
     type: (type_identifier)
     declarator: (variable_declarator
       name: (identifier)))
-  (local_variable_declaration
+  (variable_declaration
     type: (boolean_type)
     declarator: (variable_declarator
       name: (identifier))))
@@ -134,15 +134,15 @@ boolean UPPER_CASE_VARIABLE;
 --------------------------------------------------------------------------------
 
 (source_file
-  (local_variable_declaration
+  (variable_declaration
     type: (integral_type)
     declarator: (variable_declarator
       name: (identifier)))
-  (local_variable_declaration
+  (variable_declaration
     type: (type_identifier)
     declarator: (variable_declarator
       name: (identifier)))
-  (local_variable_declaration
+  (variable_declaration
     type: (boolean_type)
     declarator: (variable_declarator
       name: (identifier))))
@@ -156,15 +156,15 @@ boolean const;
 --------------------------------------------------------------------------------
 
 (source_file
-  (local_variable_declaration
+  (variable_declaration
     type: (integral_type)
     declarator: (variable_declarator
       name: (identifier)))
-  (local_variable_declaration
+  (variable_declaration
     type: (type_identifier)
     declarator: (variable_declarator
       name: (identifier)))
-  (local_variable_declaration
+  (variable_declaration
     type: (boolean_type)
     declarator: (variable_declarator
       name: (identifier))))
@@ -178,15 +178,15 @@ boolean γ;
 --------------------------------------------------------------------------------
 
 (source_file
-  (local_variable_declaration
+  (variable_declaration
     type: (integral_type)
     declarator: (variable_declarator
       name: (identifier)))
-  (local_variable_declaration
+  (variable_declaration
     type: (type_identifier)
     declarator: (variable_declarator
       name: (identifier)))
-  (local_variable_declaration
+  (variable_declaration
     type: (boolean_type)
     declarator: (variable_declarator
       name: (identifier))))

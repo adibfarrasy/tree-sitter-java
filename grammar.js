@@ -96,7 +96,7 @@ module.exports = grammar({
 
     _toplevel_statement: $ => choice(
       $.statement,
-      $.method_declaration,
+      $.function_declaration,
     ),
 
     // Literals
@@ -310,7 +310,7 @@ module.exports = grammar({
 
     lambda_expression: $ => seq(
       field('parameters', choice(
-        $.identifier, $.formal_parameters, $.inferred_parameters, $._reserved_identifier,
+        $.identifier, $.parameters, $.inferred_parameters, $._reserved_identifier,
       )),
       '->',
       field('body', choice($.expression, $.block)),
@@ -555,7 +555,7 @@ module.exports = grammar({
       $.yield_statement,
       $.switch_expression, // switch statements and expressions are identical
       $.synchronized_statement,
-      $.local_variable_declaration,
+      $.variable_declaration,
       $.throw_statement,
       $.try_statement,
       $.try_with_resources_statement,
@@ -623,12 +623,12 @@ module.exports = grammar({
     catch_clause: $ => seq(
       'catch',
       '(',
-      $.catch_formal_parameter,
+      $.catch_parameter,
       ')',
       field('body', $.block),
     ),
 
-    catch_formal_parameter: $ => seq(
+    catch_parameter: $ => seq(
       optional($.modifiers),
       $.catch_type,
       $._variable_declarator_id,
@@ -678,7 +678,7 @@ module.exports = grammar({
     for_statement: $ => seq(
       'for', '(',
       choice(
-        field('init', $.local_variable_declaration),
+        field('init', $.variable_declaration),
         seq(
           commaSep(field('init', $.expression)),
           ';',
@@ -946,7 +946,7 @@ module.exports = grammar({
     _class_body_declaration: $ => choice(
       $.field_declaration,
       $.record_declaration,
-      $.method_declaration,
+      $.function_declaration,
       $.compact_constructor_declaration, // For records.
       $.class_declaration,
       $.interface_declaration,
@@ -973,7 +973,7 @@ module.exports = grammar({
     _constructor_declarator: $ => seq(
       field('type_parameters', optional($.type_parameters)),
       field('name', $.identifier),
-      field('parameters', $.formal_parameters),
+      field('parameters', $.parameters),
     ),
 
     constructor_body: $ => seq(
@@ -1012,6 +1012,8 @@ module.exports = grammar({
       field('name', $.identifier),
     ),
 
+
+
     field_declaration: $ => seq(
       optional($.modifiers),
       field('type', $._unannotated_type),
@@ -1024,7 +1026,7 @@ module.exports = grammar({
       'record',
       field('name', $.identifier),
       optional(field('type_parameters', $.type_parameters)),
-      field('parameters', $.formal_parameters),
+      field('parameters', $.parameters),
       optional(field('interfaces', $.super_interfaces)),
       field('body', $.class_body),
     ),
@@ -1085,7 +1087,7 @@ module.exports = grammar({
       repeat(choice(
         $.constant_declaration,
         $.enum_declaration,
-        $.method_declaration,
+        $.function_declaration,
         $.class_declaration,
         $.interface_declaration,
         $.record_declaration,
@@ -1208,23 +1210,23 @@ module.exports = grammar({
 
     _method_declarator: $ => seq(
       field('name', choice($.identifier, $._reserved_identifier)),
-      field('parameters', $.formal_parameters),
+      field('parameters', $.parameters),
       field('dimensions', optional($.dimensions)),
     ),
 
-    formal_parameters: $ => seq(
+    parameters: $ => seq(
       '(',
       choice(
         $.receiver_parameter,
         seq(
           optional(seq($.receiver_parameter, ',')),
-          commaSep(choice($.formal_parameter, $.spread_parameter)),
+          commaSep(choice($.parameter, $.spread_parameter)),
         ),
       ),
       ')',
     ),
 
-    formal_parameter: $ => seq(
+    parameter: $ => seq(
       optional($.modifiers),
       field('type', $._unannotated_type),
       $._variable_declarator_id,
@@ -1249,14 +1251,14 @@ module.exports = grammar({
       'throws', commaSep1($._type),
     ),
 
-    local_variable_declaration: $ => seq(
+    variable_declaration: $ => seq(
       optional($.modifiers),
       field('type', $._unannotated_type),
       $._variable_declarator_list,
       ';',
     ),
 
-    method_declaration: $ => seq(
+    function_declaration: $ => seq(
       optional($.modifiers),
       $._method_header,
       choice(field('body', $.block), ';'),

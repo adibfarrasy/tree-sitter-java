@@ -328,10 +328,6 @@
         "named": true
       },
       {
-        "type": "local_variable_declaration",
-        "named": true
-      },
-      {
         "type": "return_statement",
         "named": true
       },
@@ -353,6 +349,10 @@
       },
       {
         "type": "try_with_resources_statement",
+        "named": true
+      },
+      {
+        "type": "variable_declaration",
         "named": true
       },
       {
@@ -1020,14 +1020,14 @@
       "required": true,
       "types": [
         {
-          "type": "catch_formal_parameter",
+          "type": "catch_parameter",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "catch_formal_parameter",
+    "type": "catch_parameter",
     "named": true,
     "fields": {
       "dimensions": {
@@ -1122,11 +1122,11 @@
           "named": true
         },
         {
-          "type": "interface_declaration",
+          "type": "function_declaration",
           "named": true
         },
         {
-          "type": "method_declaration",
+          "type": "interface_declaration",
           "named": true
         },
         {
@@ -1351,7 +1351,7 @@
         "required": true,
         "types": [
           {
-            "type": "formal_parameters",
+            "type": "parameters",
             "named": true
           }
         ]
@@ -1656,11 +1656,11 @@
           "named": true
         },
         {
-          "type": "interface_declaration",
+          "type": "function_declaration",
           "named": true
         },
         {
-          "type": "method_declaration",
+          "type": "interface_declaration",
           "named": true
         },
         {
@@ -2013,7 +2013,7 @@
             "named": true
           },
           {
-            "type": "local_variable_declaration",
+            "type": "variable_declaration",
             "named": true
           }
         ]
@@ -2031,9 +2031,19 @@
     }
   },
   {
-    "type": "formal_parameter",
+    "type": "function_declaration",
     "named": true,
     "fields": {
+      "body": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "block",
+            "named": true
+          }
+        ]
+      },
       "dimensions": {
         "multiple": false,
         "required": false,
@@ -2051,9 +2061,15 @@
           {
             "type": "identifier",
             "named": true
-          },
+          }
+        ]
+      },
+      "parameters": {
+        "multiple": false,
+        "required": true,
+        "types": [
           {
-            "type": "underscore_pattern",
+            "type": "parameters",
             "named": true
           }
         ]
@@ -2067,37 +2083,36 @@
             "named": true
           }
         ]
+      },
+      "type_parameters": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "type_parameters",
+            "named": true
+          }
+        ]
       }
     },
-    "children": {
-      "multiple": false,
-      "required": false,
-      "types": [
-        {
-          "type": "modifiers",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "formal_parameters",
-    "named": true,
-    "fields": {},
     "children": {
       "multiple": true,
       "required": false,
       "types": [
         {
-          "type": "formal_parameter",
+          "type": "annotation",
           "named": true
         },
         {
-          "type": "receiver_parameter",
+          "type": "marker_annotation",
           "named": true
         },
         {
-          "type": "spread_parameter",
+          "type": "modifiers",
+          "named": true
+        },
+        {
+          "type": "throws",
           "named": true
         }
       ]
@@ -2291,11 +2306,11 @@
           "named": true
         },
         {
-          "type": "interface_declaration",
+          "type": "function_declaration",
           "named": true
         },
         {
-          "type": "method_declaration",
+          "type": "interface_declaration",
           "named": true
         },
         {
@@ -2407,55 +2422,19 @@
         "required": true,
         "types": [
           {
-            "type": "formal_parameters",
-            "named": true
-          },
-          {
             "type": "identifier",
             "named": true
           },
           {
             "type": "inferred_parameters",
             "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "local_variable_declaration",
-    "named": true,
-    "fields": {
-      "declarator": {
-        "multiple": true,
-        "required": true,
-        "types": [
+          },
           {
-            "type": "variable_declarator",
-            "named": true
-          }
-        ]
-      },
-      "type": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "_unannotated_type",
+            "type": "parameters",
             "named": true
           }
         ]
       }
-    },
-    "children": {
-      "multiple": false,
-      "required": false,
-      "types": [
-        {
-          "type": "modifiers",
-          "named": true
-        }
-      ]
     }
   },
   {
@@ -2476,94 +2455,6 @@
           }
         ]
       }
-    }
-  },
-  {
-    "type": "method_declaration",
-    "named": true,
-    "fields": {
-      "body": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "block",
-            "named": true
-          }
-        ]
-      },
-      "dimensions": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "dimensions",
-            "named": true
-          }
-        ]
-      },
-      "name": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "identifier",
-            "named": true
-          }
-        ]
-      },
-      "parameters": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "formal_parameters",
-            "named": true
-          }
-        ]
-      },
-      "type": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "_unannotated_type",
-            "named": true
-          }
-        ]
-      },
-      "type_parameters": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "type_parameters",
-            "named": true
-          }
-        ]
-      }
-    },
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "annotation",
-          "named": true
-        },
-        {
-          "type": "marker_annotation",
-          "named": true
-        },
-        {
-          "type": "modifiers",
-          "named": true
-        },
-        {
-          "type": "throws",
-          "named": true
-        }
-      ]
     }
   },
   {
@@ -2856,6 +2747,79 @@
     }
   },
   {
+    "type": "parameter",
+    "named": true,
+    "fields": {
+      "dimensions": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "dimensions",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "underscore_pattern",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "_unannotated_type",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "modifiers",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "parameters",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "parameter",
+          "named": true
+        },
+        {
+          "type": "receiver_parameter",
+          "named": true
+        },
+        {
+          "type": "spread_parameter",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "parenthesized_expression",
     "named": true,
     "fields": {},
@@ -3022,7 +2986,7 @@
         "required": true,
         "types": [
           {
-            "type": "formal_parameters",
+            "type": "parameters",
             "named": true
           }
         ]
@@ -3318,7 +3282,7 @@
       "required": false,
       "types": [
         {
-          "type": "method_declaration",
+          "type": "function_declaration",
           "named": true
         },
         {
@@ -3929,6 +3893,42 @@
           }
         ]
       }
+    }
+  },
+  {
+    "type": "variable_declaration",
+    "named": true,
+    "fields": {
+      "declarator": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "variable_declarator",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "_unannotated_type",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "modifiers",
+          "named": true
+        }
+      ]
     }
   },
   {

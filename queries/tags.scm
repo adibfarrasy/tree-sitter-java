@@ -1,7 +1,7 @@
 (class_declaration
   name: (identifier) @name) @definition.class
 
-(method_declaration
+(function_declaration
   name: (identifier) @name) @definition.method
 
 (method_invocation

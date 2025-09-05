@@ -45,7 +45,7 @@ enum Status {
       (enum_body_declarations
         (constructor_declaration
           name: (identifier)
-          parameters: (formal_parameters)
+          parameters: (parameters)
           body: (constructor_body))))))
 
 ================================================================================
@@ -77,11 +77,11 @@ enum Status {
           type: (type_identifier)
           declarator: (variable_declarator
             name: (identifier)))
-        (method_declaration
+        (function_declaration
           (modifiers)
           type: (type_identifier)
           name: (identifier)
-          parameters: (formal_parameters)
+          parameters: (parameters)
           body: (block
             (return_statement
               (identifier))))))))
@@ -138,14 +138,14 @@ enum Color {
             name: (identifier)))
         (constructor_declaration
           name: (identifier)
-          parameters: (formal_parameters
-            (formal_parameter
+          parameters: (parameters
+            (parameter
               type: (integral_type)
               name: (identifier))
-            (formal_parameter
+            (parameter
               type: (integral_type)
               name: (identifier))
-            (formal_parameter
+            (parameter
               type: (integral_type)
               name: (identifier)))
           body: (constructor_body
@@ -194,15 +194,15 @@ enum Operation {
       (enum_constant
         name: (identifier)
         body: (class_body
-          (method_declaration
+          (function_declaration
             (modifiers)
             type: (floating_point_type)
             name: (identifier)
-            parameters: (formal_parameters
-              (formal_parameter
+            parameters: (parameters
+              (parameter
                 type: (floating_point_type)
                 name: (identifier))
-              (formal_parameter
+              (parameter
                 type: (floating_point_type)
                 name: (identifier)))
             body: (block
@@ -213,15 +213,15 @@ enum Operation {
       (enum_constant
         name: (identifier)
         body: (class_body
-          (method_declaration
+          (function_declaration
             (modifiers)
             type: (floating_point_type)
             name: (identifier)
-            parameters: (formal_parameters
-              (formal_parameter
+            parameters: (parameters
+              (parameter
                 type: (floating_point_type)
                 name: (identifier))
-              (formal_parameter
+              (parameter
                 type: (floating_point_type)
                 name: (identifier)))
             body: (block
@@ -230,15 +230,15 @@ enum Operation {
                   left: (identifier)
                   right: (identifier)))))))
       (enum_body_declarations
-        (method_declaration
+        (function_declaration
           (modifiers)
           type: (floating_point_type)
           name: (identifier)
-          parameters: (formal_parameters
-            (formal_parameter
+          parameters: (parameters
+            (parameter
               type: (floating_point_type)
               name: (identifier))
-            (formal_parameter
+            (parameter
               type: (floating_point_type)
               name: (identifier))))))))
 

@@ -15,13 +15,13 @@ class Test {
   (class_declaration
     name: (identifier)
     body: (class_body
-      (method_declaration
+      (function_declaration
         type: (void_type)
         name: (identifier)
-        parameters: (formal_parameters)
+        parameters: (parameters)
         body: (block
           (for_statement
-            init: (local_variable_declaration
+            init: (variable_declaration
               type: (integral_type)
               declarator: (variable_declarator
                 name: (identifier)
@@ -59,10 +59,10 @@ class Test {
   (class_declaration
     name: (identifier)
     body: (class_body
-      (method_declaration
+      (function_declaration
         type: (void_type)
         name: (identifier)
-        parameters: (formal_parameters)
+        parameters: (parameters)
         body: (block
           (while_statement
             condition: (parenthesized_expression
@@ -92,10 +92,10 @@ class Test {
   (class_declaration
     name: (identifier)
     body: (class_body
-      (method_declaration
+      (function_declaration
         type: (integral_type)
         name: (identifier)
-        parameters: (formal_parameters)
+        parameters: (parameters)
         body: (block
           (if_statement
             condition: (parenthesized_expression
@@ -120,10 +120,10 @@ class Test {
   (class_declaration
     name: (identifier)
     body: (class_body
-      (method_declaration
+      (function_declaration
         type: (void_type)
         name: (identifier)
-        parameters: (formal_parameters)
+        parameters: (parameters)
         body: (block
           (if_statement
             condition: (parenthesized_expression
@@ -152,15 +152,15 @@ class Test {
   (class_declaration
     name: (identifier)
     body: (class_body
-      (method_declaration
+      (function_declaration
         type: (void_type)
         name: (identifier)
-        parameters: (formal_parameters)
+        parameters: (parameters)
         body: (block
           (labeled_statement
             (identifier)
             (for_statement
-              init: (local_variable_declaration
+              init: (variable_declaration
                 type: (integral_type)
                 declarator: (variable_declarator
                   name: (identifier)
@@ -172,7 +172,7 @@ class Test {
                 (identifier))
               body: (block
                 (for_statement
-                  init: (local_variable_declaration
+                  init: (variable_declaration
                     type: (integral_type)
                     declarator: (variable_declarator
                       name: (identifier)
@@ -207,15 +207,15 @@ class Test {
   (class_declaration
     name: (identifier)
     body: (class_body
-      (method_declaration
+      (function_declaration
         type: (void_type)
         name: (identifier)
-        parameters: (formal_parameters)
+        parameters: (parameters)
         body: (block
           (labeled_statement
             (identifier)
             (for_statement
-              init: (local_variable_declaration
+              init: (variable_declaration
                 type: (integral_type)
                 declarator: (variable_declarator
                   name: (identifier)
@@ -227,7 +227,7 @@ class Test {
                 (identifier))
               body: (block
                 (for_statement
-                  init: (local_variable_declaration
+                  init: (variable_declaration
                     type: (integral_type)
                     declarator: (variable_declarator
                       name: (identifier)
@@ -258,10 +258,10 @@ class Test {
   (class_declaration
     name: (identifier)
     body: (class_body
-      (method_declaration
+      (function_declaration
         type: (void_type)
         name: (identifier)
-        parameters: (formal_parameters)
+        parameters: (parameters)
         body: (block
           (if_statement
             condition: (parenthesized_expression

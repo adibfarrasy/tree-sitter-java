@@ -1,6 +1,6 @@
 ; Methods
 
-(method_declaration
+(function_declaration
   name: (identifier) @function.method)
 (method_invocation
   name: (identifier) @function.method)
@@ -204,10 +204,10 @@
 ] @punctuation.bracket
 
 ; Variables (specific contexts only)
-(formal_parameter
+(parameter
   name: (identifier) @variable.parameter)
 
-(catch_formal_parameter
+(catch_parameter
   name: (identifier) @variable.parameter)
 
 (variable_declarator
@@ -248,8 +248,8 @@
 
 ; Lambda parameters
 (lambda_expression
-  parameters: (formal_parameters
-    (formal_parameter
+  parameters: (parameters
+    (parameter
       name: (identifier) @variable.parameter)))
 
 ; Enum constants

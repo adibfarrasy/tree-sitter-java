@@ -4,7 +4,7 @@ array initializer with elements
 int[] array = {1, 2, 3};
 --------------------------------------------------------------------------------
 (source_file
-  (local_variable_declaration
+  (variable_declaration
     type: (array_type
       element: (integral_type)
       dimensions: (dimensions))
@@ -21,7 +21,7 @@ nested array initializer
 int[][] matrix = {{1, 2}, {3, 4}};
 --------------------------------------------------------------------------------
 (source_file
-  (local_variable_declaration
+  (variable_declaration
     type: (array_type
       element: (integral_type)
       dimensions: (dimensions))
@@ -41,7 +41,7 @@ empty array initializer
 int[] array = {};
 --------------------------------------------------------------------------------
 (source_file
-  (local_variable_declaration
+  (variable_declaration
     type: (array_type
       element: (integral_type)
       dimensions: (dimensions))
@@ -55,7 +55,7 @@ array initializer with trailing comma
 int[] array = {1, 2, 3,};
 --------------------------------------------------------------------------------
 (source_file
-  (local_variable_declaration
+  (variable_declaration
     type: (array_type
       element: (integral_type)
       dimensions: (dimensions))
@@ -147,7 +147,7 @@ collection with generic type initialization
 List<String> items = new ArrayList<>();
 --------------------------------------------------------------------------------
 (source_file
-  (local_variable_declaration
+  (variable_declaration
     type: (generic_type
       (type_identifier)
       (type_arguments

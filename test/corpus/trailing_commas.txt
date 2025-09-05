@@ -37,7 +37,7 @@ List<String> items = new ArrayList<String>();
 --------------------------------------------------------------------------------
 
 (source_file
-  (local_variable_declaration
+  (variable_declaration
     type: (generic_type
       (type_identifier)
       (type_arguments

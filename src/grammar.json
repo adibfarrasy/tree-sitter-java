@@ -19,7 +19,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "method_declaration"
+          "name": "function_declaration"
         }
       ]
     },
@@ -2425,7 +2425,7 @@
               },
               {
                 "type": "SYMBOL",
-                "name": "formal_parameters"
+                "name": "parameters"
               },
               {
                 "type": "SYMBOL",
@@ -3948,7 +3948,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "local_variable_declaration"
+          "name": "variable_declaration"
         },
         {
           "type": "SYMBOL",
@@ -4282,7 +4282,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "catch_formal_parameter"
+          "name": "catch_parameter"
         },
         {
           "type": "STRING",
@@ -4298,7 +4298,7 @@
         }
       ]
     },
-    "catch_formal_parameter": {
+    "catch_parameter": {
       "type": "SEQ",
       "members": [
         {
@@ -4607,7 +4607,7 @@
               "name": "init",
               "content": {
                 "type": "SYMBOL",
-                "name": "local_variable_declaration"
+                "name": "variable_declaration"
               }
             },
             {
@@ -6038,7 +6038,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "method_declaration"
+          "name": "function_declaration"
         },
         {
           "type": "SYMBOL",
@@ -6164,7 +6164,7 @@
           "name": "parameters",
           "content": {
             "type": "SYMBOL",
-            "name": "formal_parameters"
+            "name": "parameters"
           }
         }
       ]
@@ -6430,7 +6430,7 @@
           "name": "parameters",
           "content": {
             "type": "SYMBOL",
-            "name": "formal_parameters"
+            "name": "parameters"
           }
         },
         {
@@ -6760,7 +6760,7 @@
               },
               {
                 "type": "SYMBOL",
-                "name": "method_declaration"
+                "name": "function_declaration"
               },
               {
                 "type": "SYMBOL",
@@ -7311,7 +7311,7 @@
           "name": "parameters",
           "content": {
             "type": "SYMBOL",
-            "name": "formal_parameters"
+            "name": "parameters"
           }
         },
         {
@@ -7332,7 +7332,7 @@
         }
       ]
     },
-    "formal_parameters": {
+    "parameters": {
       "type": "SEQ",
       "members": [
         {
@@ -7381,7 +7381,7 @@
                           "members": [
                             {
                               "type": "SYMBOL",
-                              "name": "formal_parameter"
+                              "name": "parameter"
                             },
                             {
                               "type": "SYMBOL",
@@ -7403,7 +7403,7 @@
                                 "members": [
                                   {
                                     "type": "SYMBOL",
-                                    "name": "formal_parameter"
+                                    "name": "parameter"
                                   },
                                   {
                                     "type": "SYMBOL",
@@ -7431,7 +7431,7 @@
         }
       ]
     },
-    "formal_parameter": {
+    "parameter": {
       "type": "SEQ",
       "members": [
         {
@@ -7566,7 +7566,7 @@
         }
       ]
     },
-    "local_variable_declaration": {
+    "variable_declaration": {
       "type": "SEQ",
       "members": [
         {
@@ -7599,7 +7599,7 @@
         }
       ]
     },
-    "method_declaration": {
+    "function_declaration": {
       "type": "SEQ",
       "members": [
         {

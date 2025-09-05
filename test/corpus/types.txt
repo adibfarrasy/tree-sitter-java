@@ -18,24 +18,24 @@ class Beyonce {
   (class_declaration
     (identifier)
     (class_body
-      (method_declaration
+      (function_declaration
         (integral_type)
         (identifier)
-        (formal_parameters)
+        (parameters)
         (block
-          (local_variable_declaration
+          (variable_declaration
             (integral_type)
               (variable_declarator (identifier)))
-          (local_variable_declaration
+          (variable_declaration
             (integral_type)
               (variable_declarator (identifier)))
-          (local_variable_declaration
+          (variable_declaration
             (integral_type)
               (variable_declarator (identifier)))
-          (local_variable_declaration
+          (variable_declaration
             (integral_type)
               (variable_declarator (identifier)))
-          (local_variable_declaration
+          (variable_declaration
             (integral_type)
               (variable_declarator (identifier))))))))
 
@@ -56,14 +56,14 @@ class Beyonce {
   (class_declaration
     (identifier)
     (class_body
-      (method_declaration
+      (function_declaration
         (integral_type)
         (identifier)
-        (formal_parameters)
+        (parameters)
         (block
-          (local_variable_declaration
+          (variable_declaration
             (floating_point_type)
             (variable_declarator (identifier)))
-          (local_variable_declaration
+          (variable_declaration
             (floating_point_type)
             (variable_declarator (identifier))))))))

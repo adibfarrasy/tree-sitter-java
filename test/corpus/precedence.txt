@@ -17,23 +17,23 @@ class A {
   (class_declaration
     (identifier)
     (class_body
-      (method_declaration
+      (function_declaration
       (modifiers)
       (void_type)
       (identifier)
-      (formal_parameters)
+      (parameters)
       (block
-        (local_variable_declaration
+        (variable_declaration
           (integral_type)
           (variable_declarator
             (identifier)
             (decimal_integer_literal)))
-        (local_variable_declaration
+        (variable_declaration
           (integral_type)
           (variable_declarator
             (identifier)
             (decimal_integer_literal)))
-        (local_variable_declaration
+        (variable_declaration
           (type_identifier)
           (variable_declarator
             (identifier)
@@ -45,7 +45,7 @@ class A {
                     (decimal_integer_literal)))
                 (identifier))
               (decimal_integer_literal))))
-        (local_variable_declaration
+        (variable_declaration
           (type_identifier)
           (variable_declarator
             (identifier)

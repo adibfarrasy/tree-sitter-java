@@ -46,7 +46,7 @@ List<String> list = new ArrayList<>();
 --------------------------------------------------------------------------------
 
 (source_file
-  (local_variable_declaration
+  (variable_declaration
     type: (generic_type
       (type_identifier)
       (type_arguments
@@ -76,13 +76,13 @@ new Runnable() {
       type: (type_identifier)
       arguments: (argument_list)
       (class_body
-        (method_declaration
+        (function_declaration
           (modifiers
             (marker_annotation
               name: (identifier)))
           type: (void_type)
           name: (identifier)
-          parameters: (formal_parameters)
+          parameters: (parameters)
           body: (block
             (expression_statement
               (method_invocation
