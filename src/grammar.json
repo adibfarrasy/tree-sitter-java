@@ -5483,6 +5483,22 @@
           "type": "CHOICE",
           "members": [
             {
+              "type": "FIELD",
+              "name": "documentation",
+              "content": {
+                "type": "SYMBOL",
+                "name": "javadoc_comment"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
               "type": "SYMBOL",
               "name": "modifiers"
             },
@@ -5675,6 +5691,22 @@
     "class_declaration": {
       "type": "SEQ",
       "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "documentation",
+              "content": {
+                "type": "SYMBOL",
+                "name": "javadoc_comment"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
         {
           "type": "CHOICE",
           "members": [
@@ -6098,6 +6130,22 @@
           "type": "CHOICE",
           "members": [
             {
+              "type": "FIELD",
+              "name": "documentation",
+              "content": {
+                "type": "SYMBOL",
+                "name": "javadoc_comment"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
               "type": "SYMBOL",
               "name": "modifiers"
             },
@@ -6356,6 +6404,22 @@
           "type": "CHOICE",
           "members": [
             {
+              "type": "FIELD",
+              "name": "documentation",
+              "content": {
+                "type": "SYMBOL",
+                "name": "javadoc_comment"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
               "type": "SYMBOL",
               "name": "modifiers"
             },
@@ -6385,6 +6449,22 @@
     "record_declaration": {
       "type": "SEQ",
       "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "documentation",
+              "content": {
+                "type": "SYMBOL",
+                "name": "javadoc_comment"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
         {
           "type": "CHOICE",
           "members": [
@@ -6462,6 +6542,22 @@
     "annotation_type_declaration": {
       "type": "SEQ",
       "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "documentation",
+              "content": {
+                "type": "SYMBOL",
+                "name": "javadoc_comment"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
         {
           "type": "CHOICE",
           "members": [
@@ -6647,6 +6743,22 @@
     "interface_declaration": {
       "type": "SEQ",
       "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "documentation",
+              "content": {
+                "type": "SYMBOL",
+                "name": "javadoc_comment"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
         {
           "type": "CHOICE",
           "members": [
@@ -7606,6 +7718,22 @@
           "type": "CHOICE",
           "members": [
             {
+              "type": "FIELD",
+              "name": "documentation",
+              "content": {
+                "type": "SYMBOL",
+                "name": "javadoc_comment"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
               "type": "SYMBOL",
               "name": "modifiers"
             },
@@ -7773,6 +7901,30 @@
           ]
         }
       }
+    },
+    "javadoc_comment": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PREC",
+        "value": 1,
+        "content": {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "/**"
+            },
+            {
+              "type": "PATTERN",
+              "value": "([^*]|\\*+[^*/])*"
+            },
+            {
+              "type": "PATTERN",
+              "value": "\\*+\\/"
+            }
+          ]
+        }
+      }
     }
   },
   "extras": [
@@ -7783,6 +7935,10 @@
     {
       "type": "SYMBOL",
       "name": "block_comment"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "javadoc_comment"
     },
     {
       "type": "PATTERN",

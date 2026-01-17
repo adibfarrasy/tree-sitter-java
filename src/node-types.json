@@ -498,6 +498,16 @@
           }
         ]
       },
+      "documentation": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "javadoc_comment",
+            "named": true
+          }
+        ]
+      },
       "name": {
         "multiple": false,
         "required": true,
@@ -1154,6 +1164,16 @@
           }
         ]
       },
+      "documentation": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "javadoc_comment",
+            "named": true
+          }
+        ]
+      },
       "interfaces": {
         "multiple": false,
         "required": false,
@@ -1332,6 +1352,16 @@
         "types": [
           {
             "type": "constructor_body",
+            "named": true
+          }
+        ]
+      },
+      "documentation": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "javadoc_comment",
             "named": true
           }
         ]
@@ -1734,6 +1764,16 @@
           }
         ]
       },
+      "documentation": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "javadoc_comment",
+            "named": true
+          }
+        ]
+      },
       "interfaces": {
         "multiple": false,
         "required": false,
@@ -1938,6 +1978,16 @@
           }
         ]
       },
+      "documentation": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "javadoc_comment",
+            "named": true
+          }
+        ]
+      },
       "type": {
         "multiple": false,
         "required": true,
@@ -2050,6 +2100,16 @@
         "types": [
           {
             "type": "dimensions",
+            "named": true
+          }
+        ]
+      },
+      "documentation": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "javadoc_comment",
             "named": true
           }
         ]
@@ -2330,6 +2390,16 @@
         "types": [
           {
             "type": "interface_body",
+            "named": true
+          }
+        ]
+      },
+      "documentation": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "javadoc_comment",
             "named": true
           }
         ]
@@ -2957,6 +3027,16 @@
         "types": [
           {
             "type": "class_body",
+            "named": true
+          }
+        ]
+      },
+      "documentation": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "javadoc_comment",
             "named": true
           }
         ]
@@ -4383,6 +4463,11 @@
   {
     "type": "interface",
     "named": false
+  },
+  {
+    "type": "javadoc_comment",
+    "named": true,
+    "extra": true
   },
   {
     "type": "line_comment",
